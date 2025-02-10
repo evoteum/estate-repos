@@ -6,6 +6,7 @@ on:
       - "tofu/**"
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   id-token: write
@@ -50,7 +51,7 @@ jobs:
       run: |
         cd tofu
         echo "Initializing OpenTofu"
-        tofu init -backend-config="bucket=${{ secrets.TOFU_STATE_BUCKET_NAME }}"
+        tofu init -input=false -backend-config="bucket=${{ secrets.TOFU_STATE_BUCKET_NAME }}"
         echo "Verifying backend configuration"
         tofu state list >/dev/null && echo "✓ State backend configured and accessible" || echo "✗ State backend not accessible"
         echo "Planning OpenTofu"
