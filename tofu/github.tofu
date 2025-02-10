@@ -1,5 +1,5 @@
 module "github_repository" {
-  source = "github.com/evoteum/tofu-modules.git//github/repository"
+  source = "github.com/evoteum/tofu-modules.git//github/repo"
   for_each = local.repositories
   
   name        = each.key
