@@ -1,0 +1,71 @@
+name: apply_tofu
+
+on:
+  push:
+    paths:
+      - "tofu/**"
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+  actions: write
+
+env:
+  TF_VAR_org_name: ${{ github.repository_owner }}
+  TF_VAR_repo_name: ${{ github.event.repository.name }}
+  GITHUB_APP_ID: ${{ secrets.EVOTEUMBOT_APP_ID }}
+  GITHUB_APP_INSTALLATION_ID: ${{ secrets.EVOTEUMBOT_APP_INSTALLATION_ID }}
+  GITHUB_APP_PEM_FILE: ${{ secrets.EVOTEUMBOT_APP_PEM_FILE }}
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up OpenTofu
+      uses: opentofu/setup-opentofu@v1
+      with:
+        tofu_version: 1.9.0
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        audience: sts.amazonaws.com
+        aws-region: ${{ vars.AWS_REGION }}
+        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+        role-session-name: ${{ github.event.repository.name }}--${{ github.workflow }}--${{ github.run_number }}--${{ github.job }}
+
+    - name: Verify AWS Authentication
+      run: |
+        aws sts get-caller-identity >/dev/null && echo "✓ AWS accessible" || echo "✗ AWS not accessible"
+
+    - name: Do that OpenTofu that you do so well
+      id: plan
+      run: |
+        cd tofu
+        echo "Initializing OpenTofu"
+        tofu init -backend-config="bucket=${{ secrets.TOFU_STATE_BUCKET_NAME }}"
+        echo "Verifying backend configuration"
+        tofu state list >/dev/null && echo "✓ State backend configured and accessible" || echo "✗ State backend not accessible"
+        echo "Planning OpenTofu"
+        tofu plan -input=false -out=tfplan | tee plan.txt
+        echo "Showing OpenTofu plan"
+        tofu show -json tfplan > tfplan.json
+        if grep -q "No changes." plan.txt; then
+          echo "changes=false" >> $GITHUB_OUTPUT
+        else
+          echo "changes=true" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Apply OpenTofu configuration
+      if: steps.plan.outputs.changes == 'true'
+      run: |
+        cd tofu
+        echo "Applying OpenTofu configuration"
+        tofu apply tfplan
+        
