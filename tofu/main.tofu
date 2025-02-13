@@ -15,9 +15,10 @@ terraform {
   }
   required_version = "1.9.0"
   backend "s3" {
-    bucket = "tofu-state-*****" # Provided in CD
-    key    = "${var.repo_name}/tofu.tfstate"
-    region = var.aws_region
+    # These are all provided in CD, so these values are just placeholders.
+    bucket = "tofu-state-*****"
+    key    = "repo_name/tofu.tfstate"
+    region = "AWS_REGION"
   }
 }
 

@@ -51,9 +51,12 @@ jobs:
       run: |
         cd tofu
         echo "Initializing OpenTofu"
-        tofu init -input=false -backend-config="bucket=${{ secrets.TOFU_STATE_BUCKET_NAME }}"
+        tofu init -input=false \
+          -backend-config="bucket=${{ secrets.TOFU_STATE_BUCKET_NAME }}" \
+          -backend-config="region=${{ vars.AWS_REGION }}" \
+          -backend-config="key=${{ github.event.repository.name }}/tofu.tfstate"
         echo "Verifying backend configuration"
-        tofu state list >/dev/null && echo "✓ State backend configured and accessible" || echo "✗ State backend not accessible"
+        tofu state list >/dev/null && echo "✓ State backend configured and accessible" || (echo "✗ State backend not accessible" && exit 1)
         echo "Planning OpenTofu"
         tofu plan -input=false -out=tfplan | tee plan.txt
         echo "Showing OpenTofu plan"
