@@ -50,6 +50,8 @@ jobs:
       id: plan
       run: |
         cd tofu
+        echo "Verifying S3 bucket access"
+        aws s3 ls s3://${{ secrets.TOFU_STATE_BUCKET_NAME }} >/dev/null && echo "✓ S3 bucket accessible" || (echo "✗ S3 bucket not accessible" && exit 1)
         echo "Initializing OpenTofu"
         tofu init -input=false \
           -backend-config="bucket=${{ secrets.TOFU_STATE_BUCKET_NAME }}" \
