@@ -1,4 +1,4 @@
 locals {
-  repositories = from_yaml(file("${path.module}/../repositories.yaml"))
+  repositories = yamldecode(file("${path.module}/../repositories.yaml"))
 
 }
