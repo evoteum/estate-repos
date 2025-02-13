@@ -1,14 +1,6 @@
 .github:
   description: GitHub configuration
-estate-config:
-  description: Configuration management for Estate
-estate-repos:
-  description: GitHub repo configuration
 evoteum.github.io:
   description: Evoteum's website
-planzoco:
-  description: Plan your thing!
-tofu-modules:
-  description: Reusable OpenTofu modules
 estate-reusable-workflows:
   description: Reusable GitHub Actions workflows
