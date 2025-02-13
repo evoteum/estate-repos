@@ -1,4 +1,4 @@
 locals {
-  repositories = yamldecode(file("${path.module}/../repositories.yaml"))
+  repositories = yamldecode(file("${path.module}/../repos.yaml"))
 
 }
