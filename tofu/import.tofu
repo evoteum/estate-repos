@@ -1,19 +1,19 @@
 import {
-  to = module.github_repository["estate-config"]
+  to = module.github_repository["estate-config"].github_repository
   id = "estate-config"
 }
 
 import {
-  to = module.github_repository["tofu-modules"]
+  to = module.github_repository["tofu-modules"].github_repository
   id = "tofu-modules"
 }
 
 import {
-  to = module.github_repository["planzoco"]
+  to = module.github_repository["planzoco"].github_repository
   id = "planzoco"
 }
 
 import {
-  to = module.github_repository["estate-repos"]
+  to = module.github_repository["estate-repos"].github_repository
   id = "estate-repos"
 }
