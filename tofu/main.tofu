@@ -30,9 +30,3 @@ provider "github" {
   owner = var.org_name
   app_auth {} # Using `GITHUB_APP_XXX` environment variables in CI
 }
-
-resource "null_resource" "bootstrap" {
-  provisioner "local-exec" {
-    command = "echo 'Bootstrapping OpenTofu State'"
-  }
-}
