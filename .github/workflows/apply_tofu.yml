@@ -43,31 +43,38 @@ jobs:
         role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
         role-session-name: ${{ github.event.repository.name }}--${{ github.workflow }}--${{ github.run_number }}--${{ github.job }}
 
-    - name: Verify AWS Authentication
+    - name: Verify AWS Accessibility
       run: |
         aws sts get-caller-identity >/dev/null && echo "✓ AWS accessible" || echo "✗ AWS not accessible"
+        aws s3 ls s3://${{ secrets.TOFU_STATE_BUCKET_NAME }} >/dev/null && echo "✓ S3 state bucket accessible" || (echo "✗ S3 state bucket not accessible" && exit 1)
 
-    - name: Do that OpenTofu that you do so well
-      id: plan
+    - name: Initialize OpenTofu
+      id: tofu-init
       run: |
         cd tofu
-        echo "Verifying S3 bucket access"
-        aws s3 ls s3://${{ secrets.TOFU_STATE_BUCKET_NAME }} >/dev/null && echo "✓ S3 bucket accessible" || (echo "✗ S3 bucket not accessible" && exit 1)
-        echo "Initializing OpenTofu"
         tofu init \
           -input=false \
           -backend-config="bucket=${{ secrets.TOFU_STATE_BUCKET_NAME }}" \
-          -backend-config="region=${{ vars.AWS_REGION }}" \
-          -backend-config="key=${{ github.event.repository.name }}/tofu.tfstate"
-        echo "Planning OpenTofu"
+          -backend-config="key=${{ github.event.repository.name }}/tofu.tfstate" \
+          -backend-config="region=${{ vars.AWS_REGION }}"
+
+    - name: Build OpenTofu Plan
+      id: tofu-plan
+      run: |
+        cd tofu
+        set -o pipefail
         tofu plan -input=false -out=tfplan | tee plan.txt
-        echo "Showing OpenTofu plan"
+
+    - name: Check OpenTofu Plan
+      id: tofu-check-plan
+      run: |
+        cd tofu
         tofu show -json tfplan > tfplan.json
-        if grep -q "No changes." plan.txt; then
-          echo "changes=false" >> $GITHUB_OUTPUT
-        else
-          echo "changes=true" >> $GITHUB_OUTPUT
-        fi
+        grep -q "No changes" plan.txt && echo "changes=false" >> $GITHUB_OUTPUT && exit 0
+        
+        echo "changes=true" >> $GITHUB_OUTPUT
+        # Further plan checks will be added here
+        
 
     - name: Apply OpenTofu configuration
       if: steps.plan.outputs.changes == 'true'
