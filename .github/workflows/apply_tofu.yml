@@ -70,7 +70,7 @@ jobs:
       run: |
         cd tofu
         tofu show -json tfplan > tfplan.json
-        if [grep -q "No changes" plan.txt]; then
+        if grep -q "No changes." plan.txt; then
           echo "changes=false" >> $GITHUB_OUTPUT
           exit 0
         fi
