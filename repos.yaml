@@ -1,2 +1,8 @@
 testy-mctestface:
   description: "This is a test repo"
+.github:
+  description: GitHub configuration
+evoteum.github.io:
+  description: Evoteum's website
+estate-reusable-workflows:
+  description: Reusable GitHub Actions workflows

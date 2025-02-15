@@ -15,12 +15,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install yq
-        run: |
-          wget https://github.com/mikefarah/yq/releases/download/v4.40.5/yq_linux_amd64 -O yq
-          chmod +x yq
-          sudo mv yq /usr/local/bin/
-
       - name: Sort YAML keys
         run: |
           yq -iP 'sort_keys(..)' repos.yaml
