@@ -13,4 +13,6 @@ module "github_repository" {
   has_wiki                    = lookup(each.value, "has_wiki", null)
   topics                      = lookup(each.value, "topics", null)
   archived                    = lookup(each.value, "archived", null)
+  management_repo_name        = var.repo_name
+  management_repo_url         = var.repo_url
 }

@@ -12,6 +12,11 @@ variable "org_name" {
 
 variable "repo_name" {
   type        = string
-  description = "The name of the repository."
+  description = "The name of this repository."
   sensitive   = false
+}
+
+variable "repo_url" {
+    type        = string
+    description = "The HTML URL of this repository"
 }

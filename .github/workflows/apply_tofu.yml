@@ -17,6 +17,7 @@ permissions:
 env:
   TF_VAR_org_name: ${{ github.repository_owner }}
   TF_VAR_repo_name: ${{ github.event.repository.name }}
+  TF_VAR_repo_url: ${{ github.event.repository.html_url }}
   TF_VAR_aws_region: ${{ vars.AWS_REGION }}
   GITHUB_APP_ID: ${{ secrets.EVOTEUMBOT_APP_ID }}
   GITHUB_APP_INSTALLATION_ID: ${{ secrets.EVOTEUMBOT_APP_INSTALLATION_ID }}
