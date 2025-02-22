@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "tofu/**"
+      - repos.yaml
 
 permissions:
   id-token: write
