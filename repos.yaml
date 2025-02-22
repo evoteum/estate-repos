@@ -6,3 +6,8 @@ evoteum.github.io:
   description: Evoteum's website
 estate-reusable-workflows:
   description: Reusable GitHub Actions workflows
+discussions:
+  description: Community Discussions
+  discussions: has_discussions
+  has_issues: false
+  has_downloads: false
