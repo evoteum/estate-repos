@@ -17,3 +17,4 @@ jobs:
     secrets: inherit
     with:
       fail-fast: false
+      environments: "['development']"
