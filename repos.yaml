@@ -1,17 +1,13 @@
 .github:
   description: GitHub configuration
-
 discussions:
   description: Community Discussions
   has_discussions: true
   has_downloads: false
   has_issues: false
-
 estate-reusable-workflows:
   description: Reusable GitHub Actions workflows
-
 evoteum.github.io:
   description: Evoteum's website
-
 testy-mctestface:
   description: This is a test repository
