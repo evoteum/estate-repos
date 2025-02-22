@@ -1,0 +1,18 @@
+name: all-environments-tofu-apply
+
+on:
+  push:
+    paths:
+      - "tofu/**"
+
+permissions:
+  id-token: write
+  contents: write
+  actions: write
+
+jobs:
+  deploy-multi-tofu:
+    uses: evoteum/estate-reusable-workflows/.github/workflows/all-environments-tofu-apply.yml@main
+    secrets: inherit
+    with:
+      fail-fast: false
