@@ -2,7 +2,7 @@
   description: GitHub configuration
 discussions:
   description: Community Discussions
-  discussions: has_discussions
+  has_discussions: true
   has_downloads: false
   has_issues: false
 estate-reusable-workflows:
