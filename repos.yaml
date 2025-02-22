@@ -7,7 +7,6 @@ discussions:
   has_issues: false
 estate-reusable-workflows:
   description: Reusable GitHub Actions workflows
-
 evoteum.github.io:
   description: Evoteum's website
 testy-mctestface:
