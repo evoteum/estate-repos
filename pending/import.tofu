@@ -9,11 +9,6 @@ import {
 }
 
 import {
-  to = module.github_repository["planzoco"].github_repository.repo
-  id = "${var.org_name}/planzoco"
-}
-
-import {
   to = module.github_repository["estate-repos"].github_repository.repo
   id = "${var.org_name}/estate-repos"
 }
