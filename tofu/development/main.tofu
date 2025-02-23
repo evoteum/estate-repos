@@ -13,6 +13,7 @@ terraform {
       version = "6.5.0"
     }
   }
+
   required_version = "1.9.0"
   backend "s3" {
     # These values will be overridden by -backend-config in CI
