@@ -13,3 +13,5 @@ planzoco:
   description: Every question finds its best answer
 testy-mctestface:
   description: Sandbox for testing
+estate-config:
+  description: Configuration for the entire evoteum estate
