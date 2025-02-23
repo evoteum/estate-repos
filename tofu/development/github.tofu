@@ -2,8 +2,8 @@ module "github_repository" {
   source   = "github.com/evoteum/tofu-modules.git//github/repo"
   for_each = local.repositories
 
-  repo_name        = each.key
-  repo_description = each.value.description
+  name        = each.key
+  description = each.value.description
 
   visibility                  = lookup(each.value, "visibility", null)
   homepage_url                = lookup(each.value, "homepage_url", null)
