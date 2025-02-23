@@ -7,7 +7,7 @@ module "github_repository" {
 
   visibility                  = lookup(each.value, "visibility", null)
   homepage_url                = lookup(each.value, "homepage_url", null)
-  has_issues                  = null
+  has_issues                  = lookup(each.value, "has_issues", null)
   has_discussions             = lookup(each.value, "has_discussions", null)
   has_projects                = lookup(each.value, "has_projects", null)
   has_wiki                    = lookup(each.value, "has_wiki", null)
