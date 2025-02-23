@@ -41,16 +41,18 @@ We do not delete repositories, as they may contain valuable information, so do n
 
 Each repository entry in repos.yaml can include the following variables:
 
-- `repo_name` (required) - The name of the repository.
-- `repo_description` (required) - A brief description of the repository.
-- `visibility` (default: public, should only be changed if absolutely necessary) - Determines if the repository is public or private.
-- `homepage_url` - The URL of the project's homepage.
-- `has_issues` - Whether GitHub Issues are enabled for the repository.
-- `has_discussions` - Whether GitHub Discussions are enabled for the repository.
-- `has_projects` - Whether GitHub Projects are enabled.
-- `has_wiki` - Whether the GitHub Wiki is enabled.
-- `topics` - A list of topics associated with the repository. 
-- `archived` - Whether the repository is archived.
+| Parameter         | Required | Default  | Description                                                                                        |
+|-------------------|----------|----------|----------------------------------------------------------------------------------------------------|
+| key               | ❗ Yes    |          | The name of the repository.                                                                        |
+| `description`     | ❗ Yes    |          | A brief description of the repository.                                                             |
+| `visibility`      | 👍 No    | `public` | Determines if the repository is public or private. Should only be changed if absolutely necessary. |
+| `homepage_url`    | 👍 No    |          | The URL of the project's homepage.                                                                 |
+| `has_issues`      | 👍 No    | true     | Whether GitHub Issues are enabled for the repository.                                              |
+| `has_discussions` | 👍 No    | false    | Whether GitHub Discussions are enabled for the repository.                                         |
+| `has_projects`    | 👍 No    | false    | Whether GitHub Projects are enabled.                                                               |
+| `has_wiki`        | 👍 No    | false    | Whether the GitHub Wiki is enabled.                                                                |
+| `topics`          | 👍 No    |          | A list of topics associated with the repository.                                                   |
+| `archived`        | 👍 No    | false    | Whether the repository is archived.                                                                |
 
 
 ## Repository Structure
