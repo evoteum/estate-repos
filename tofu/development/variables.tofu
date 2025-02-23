@@ -17,6 +17,6 @@ variable "repo_name" {
 }
 
 variable "repo_url" {
-    type        = string
-    description = "The HTML URL of this repository"
+  type        = string
+  description = "The HTML URL of this repository"
 }
