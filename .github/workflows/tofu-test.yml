@@ -1,4 +1,4 @@
-name: OpenTofu State Check
+name: tofu_state_check
 
 on:
   workflow_dispatch:
