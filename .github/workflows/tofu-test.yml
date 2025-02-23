@@ -58,4 +58,6 @@ jobs:
               -backend-config="region=${{ vars.AWS_REGION }}"
 
       - name: Show OpenTofu State List
-        run: tofu state list
+        run: |
+          cd tofu/development
+          tofu state list
