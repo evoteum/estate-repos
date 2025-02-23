@@ -5,17 +5,17 @@ discussions:
   has_discussions: true
   has_downloads: false
   has_issues: false
+estate-config:
+  description: Configuration for the entire Evoteum estate
+estate-repos:
+  description: GitHub repo configuration
 estate-reusable-workflows:
   description: Reusable GitHub Actions workflows
 evoteum.github.io:
   description: Evoteum's website
-testy-mctestface:
-  description: Sandbox for testing
-estate-config:
-  description: Configuration for the entire Evoteum estate
-tofu-modules:
-  description: Reusable OpenTofu modules
 planzoco:
   description: Every question finds its best answer
-estate-repos:
-  description: GitHub repo configuration
+testy-mctestface:
+  description: Sandbox for testing
+tofu-modules:
+  description: Reusable OpenTofu modules
