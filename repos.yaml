@@ -7,6 +7,9 @@ discussions:
   has_issues: false
 estate-config:
   description: Configuration for the estate
+tofu-modules:
+  description: Modules for OpenTofu
+  
 estate-reusable-workflows:
   description: Reusable GitHub Actions workflows
 evoteum.github.io:
