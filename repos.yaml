@@ -10,4 +10,12 @@ estate-reusable-workflows:
 evoteum.github.io:
   description: Evoteum's website
 testy-mctestface:
-  description: This is a test repository
+  description: Sandbox for testing
+estate-config:
+  description: Configuration for the entire Evoteum estate
+tofu-modules:
+  description: Reusable OpenTofu modules
+planzoco:
+  description: Every question finds its best answer
+estate-repos:
+  description: GitHub repo configuration
