@@ -5,8 +5,6 @@ discussions:
   has_discussions: true
   has_downloads: false
   has_issues: false
-estate-config:
-  description: Configuration for the entire evoteum estate
 estate-reusable-workflows:
   description: Reusable GitHub Actions workflows
 evoteum.github.io:
