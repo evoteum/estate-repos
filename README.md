@@ -1,74 +1,81 @@
 # estate-repos
 
-**estate-repos** is a repository designed to automate the creation and management of repositories within the [evoteum](https://github.com/evoteum) organization. It leverages [OpenTofu](https://opentofu.org/) to apply infrastructure-as-code principles, enabling seamless repository provisioning and configuration.
+**estate-repos** automates the creation and management of repositories within the [evoteum](https://github.com/evoteum) organization.
 
-## Features
+## Why?
+Creating and managing repositories manually is time-consuming and error-prone. Using estate-repos, we ensure consistency
+and efficiency.
 
 - **Automated Repository Creation**: Simply add the repository name, description, and any required attributes to `repos.yaml`.
 - **Consistent Configuration**: Ensures all repositories follow organizational standards.
-- **Scalable and Flexible**: Easily add and modify repositories as needed.
+- **Scalable and Flexible**: Easily add and modify repositories.
+
+...Because everyone ❤️ YAML.
 
 
 ## Usage
 ### Creating repos
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/evoteum/estate-repos.git
-   cd estate-repos
-   ```
+1. To avoid the [XY problem](https://xyproblem.info/),
+[propose new repositories](https://github.com/orgs/evoteum/discussions/categories/polls).
+1. Once agreed, add new repositories to repos.yaml
 
-2. **Define Repositories**:
-   - Open `repos.yaml` and add new repositories with attributes like:
-     ```yaml
-     - name: my-new-repo
-       description: "A new project for evoteum."
-       visibility: private
-       topics:
-         - devops
-         - automation
-     ```
+> [!NOTE]  
+> We do not rename repositories because it breaks links and references. Discuss the name before creating the repository. 
 
-3. **Push the change**
+#### Example
+```yaml
+my-new-repo:
+  description: A new project for evoteum.
+  topics:
+    - devops
+    - automation
+ ```
 
-After a few seconds, the new repository will be created in the evoteum organization.
-
-### Archiving repos
-
-We do not delete repositories, as they may contain valuable information, so do not remove repos from repos.yaml. Instead, archive them by simply adding `archived: true` to the repository definition in `repos.yaml`.
-
-## Repository Variables in repos.yaml
+#### Variables
 
 Each repository entry in repos.yaml can include the following variables:
 
-| Parameter         | Required | Default  | Description                                                                                        |
-|-------------------|----------|----------|----------------------------------------------------------------------------------------------------|
-| key               | ❗ Yes    |          | The name of the repository.                                                                        |
-| `description`     | ❗ Yes    |          | A brief description of the repository.                                                             |
-| `visibility`      | 👍 No    | `public` | Determines if the repository is public or private. Should only be changed if absolutely necessary. |
-| `homepage_url`    | 👍 No    |          | The URL of the project's homepage.                                                                 |
-| `has_issues`      | 👍 No    | true     | Whether GitHub Issues are enabled for the repository.                                              |
-| `has_discussions` | 👍 No    | false    | Whether GitHub Discussions are enabled for the repository.                                         |
-| `has_projects`    | 👍 No    | false    | Whether GitHub Projects are enabled.                                                               |
-| `has_wiki`        | 👍 No    | false    | Whether the GitHub Wiki is enabled.                                                                |
-| `topics`          | 👍 No    |          | A list of topics associated with the repository.                                                   |
-| `archived`        | 👍 No    | false    | Whether the repository is archived.                                                                |
+| Parameter         | Required | Default  | Description                                                |
+|-------------------|----------|----------|------------------------------------------------------------|
+| key               | ❗ Yes    |          | The name of the repository.                                |
+| `description`     | ❗ Yes    |          | A brief description of the repository.                     |
+| `homepage_url`    | 👍 No    |          | The URL of the project's homepage.                         |
+| `topics`          | 👍 No    |          | A list of topics associated with the repository.           |
+| `archived`        | 👍 No    | false    | Whether the repository is archived.                        |
+| `has_discussions` | 👍 No    | false    | Whether GitHub Discussions are enabled for the repository. |
+| `has_issues`      | 👍 No    | true     | Whether GitHub Issues are enabled for the repository.      |
+| `has_projects`    | 👍 No    | false    | Whether GitHub Projects are enabled.                       |
+| `has_wiki`        | 👍 No    | false    | Whether the GitHub Wiki is enabled.                        |
+| `visibility`      | 👍 No    | `public` | Determines if the repository is public or private.         |
+
+Where default values are provided, they should be used unless absolutely necessary. 
+
+### Archiving repos
+
+> [!CAUTION]
+> Archiving is permanent! Please [propose archiving](https://github.com/orgs/evoteum/discussions/categories/polls) before proceeding.
+
+If the community agree that the repository should be archived,
+1. prepend the repo readme with a note alert that includes a link to the discussion for future context.
+
+> [!NOTE]
+> Following [community discussion](#), this project has been concluded, so this repository is no longer maintained. Thank you to all contributors and users for your support.
+
+2. add `archived: true` to the repo in `repos.yaml`.
+3. Coffee.
 
 
-## Repository Structure
+> [!IMPORTANT]  
+> We do not delete repositories because they may contain valuable information.
+> 
+> Removing repos from repos.yaml will cause a [`prevent_destroy`](https://opentofu.org/docs/language/meta-arguments/lifecycle/#:~:text=contains%20more%20details.-,prevent_destroy,-(bool)%20-%20This%20meta) error.
 
-- `.github/workflows/` - CI/CD workflows for automation.
-- `tofu/` - Contains OpenTofu configuration files and modules.
-- `repos.yaml` - YAML file defining repositories to be created.
-- `LICENSE` - License information for the project.
-- `README.md` - Documentation for using the repository.
 
 ## Contributing
 
-Contributions are welcome! To propose changes:
-1. Fork this repository.
-2. Modify `repos.yaml` or other relevant files.
-3. Submit a pull request.
+Contributions are welcome! 
+
 
 ## License
 
