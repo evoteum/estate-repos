@@ -36,5 +36,6 @@ provider "quay" {
 
 provider "github" {
   owner = var.organisation
-  app_auth {} # Using `GITHUB_APP_XXX` environment variables in CI
+  # Using `GITHUB_APP_XXX` environment variables in CI
+  app_auth {}
 }
