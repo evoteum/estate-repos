@@ -25,6 +25,7 @@ module "github_repository" {
   management_repo_url  = var.repo_url
   organisation         = var.organisation
   project_path         = lookup(each.value, "project_path", null)
+  quay_url             = var.quay_url
   topics               = lookup(each.value, "topics", null)
   visibility           = lookup(each.value, "visibility", null)
 }
