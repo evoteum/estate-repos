@@ -15,5 +15,6 @@ planzoco:
   description: Every question finds its best answer
 testy-mctestface:
   description: Sandbox for testing
+  artifact_type: container
 tofu-modules:
   description: Modules for OpenTofu
