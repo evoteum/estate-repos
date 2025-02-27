@@ -14,7 +14,7 @@ evoteum.github.io:
 planzoco:
   description: Every question finds its best answer
 testy-mctestface:
-  description: Sandbox for testing
   artifact_type: container
+  description: Sandbox for testing
 tofu-modules:
   description: Modules for OpenTofu
