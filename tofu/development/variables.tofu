@@ -11,7 +11,7 @@ variable "organisation" {
 }
 
 variable "quay_url" {
-  type = string
+  type        = string
   description = "The URL of the Quay server"
 }
 
