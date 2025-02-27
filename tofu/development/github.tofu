@@ -28,4 +28,5 @@ module "github_repository" {
   quay_url             = var.quay_url
   topics               = lookup(each.value, "topics", null)
   visibility           = lookup(each.value, "visibility", null)
+
 }
