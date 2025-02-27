@@ -1,6 +1,7 @@
 name: all-environments-tofu-apply
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - "tofu/**"
