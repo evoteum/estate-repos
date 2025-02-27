@@ -1,13 +1,11 @@
 variable "aws_region" {
   type        = string
   description = "The AWS region to deploy the infrastructure to."
-  sensitive   = false
 }
 
 variable "organisation" {
   type        = string
   description = "The name of the organisation."
-  sensitive   = false
 }
 
 variable "quay_url" {
@@ -18,7 +16,6 @@ variable "quay_url" {
 variable "repo_name" {
   type        = string
   description = "The name of this repository."
-  sensitive   = false
 }
 
 variable "repo_url" {
