@@ -4,10 +4,15 @@ variable "aws_region" {
   sensitive   = false
 }
 
-variable "org_name" {
+variable "organisation" {
   type        = string
   description = "The name of the organisation."
   sensitive   = false
+}
+
+variable "quay_url" {
+  type = string
+  description = "The URL of the Quay server"
 }
 
 variable "repo_name" {

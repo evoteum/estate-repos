@@ -16,8 +16,8 @@ and efficiency.
 ## Usage
 ### Creating repos
 
-1. To avoid the [XY problem](https://xyproblem.info/),
-[propose new repositories](https://github.com/orgs/evoteum/discussions/categories/polls).
+1. To avoid the [XY problem](https://xyproblem.info/), and to check that others like the name, please
+[propose new repositories](https://github.com/orgs/evoteum/discussions/new?category=polls).
 1. Once agreed, add new repositories to repos.yaml
 
 > [!NOTE]  
@@ -34,33 +34,42 @@ my-new-repo:
 
 #### Variables
 
-Each repository entry in repos.yaml can include the following variables:
+Each repository entry in repos.yaml can include the following parameters:
 
-| Parameter         | Required | Default  | Description                                                |
-|-------------------|----------|----------|------------------------------------------------------------|
-| key               | ❗ Yes    |          | The name of the repository.                                |
-| `description`     | ❗ Yes    |          | A brief description of the repository.                     |
-| `homepage_url`    | 👍 No    |          | The URL of the project's homepage.                         |
-| `topics`          | 👍 No    |          | A list of topics associated with the repository.           |
-| `archived`        | 👍 No    | false    | Whether the repository is archived.                        |
-| `has_discussions` | 👍 No    | false    | Whether GitHub Discussions are enabled for the repository. |
-| `has_issues`      | 👍 No    | true     | Whether GitHub Issues are enabled for the repository.      |
-| `has_projects`    | 👍 No    | false    | Whether GitHub Projects are enabled.                       |
-| `has_wiki`        | 👍 No    | false    | Whether the GitHub Wiki is enabled.                        |
-| `visibility`      | 👍 No    | `public` | Determines if the repository is public or private.         |
+| Parameter          | Required | Default      | Permitted values    | Description                                                      |
+|--------------------|----------|--------------|---------------------|------------------------------------------------------------------|
+| key                | ❗ Yes    |              | Any string          | The name of the repository.                                      |
+| `description`      | ❗ Yes    |              | Any string          | A brief description of the repository.                           |
+| `homepage_url`     | 👍 No    |              | Any string          | The URL of the project's homepage.                               |
+| `artifact_type`    | 👍 No    |              | `container`         | The deployment artifact that the project should produce. |
+| `build_flags`      | 👍 No    |              | Any string          | Flags to add to the build command.                               |
+| `language`         | 👍 No    |              | Any string          | The language that the project is written in.                     |
+| `language_version` | 👍 No    |              | Any string          | The version of the language that the project is written in.      |
+| `project_path`     | 👍 No    |              | Any string          | Path to the source code (not the tofu code)                      |
+| `topics`           | 👍 No    |              | List of any strings | A list of topics associated with the repository.                 |
+| `archived`         | 👍 No    | false        | `true`, `false`     | Whether the repository is archived.                              |
+| `environments`     | 👍 No    | [discovered] | List of any strings | List of environment names. Discovered if omitted.                |
+| `fail_fast`        | 👍 No    | true         | `true`, `false`     | Whether all deployments should fail if one environment fails.    |
+| `has_discussions`  | 👍 No    | false        | `true`, `false`     | Whether GitHub Discussions are enabled for the repository.       |
+| `has_issues`       | 👍 No    | true         | `true`, `false`     | Whether GitHub Issues are enabled for the repository.            |
+| `has_projects`     | 👍 No    | false        | `true`, `false`     | Whether GitHub Projects are enabled.                             |
+| `has_wiki`         | 👍 No    | false        | `true`, `false`     | Whether the GitHub Wiki is enabled.                              |
+| `visibility`       | 👍 No    | `public`     | `public`, `private` | Determines if the repository is public or private.               |
 
 Where default values are provided, they should be used unless absolutely necessary. 
 
 ### Archiving repos
 
 > [!CAUTION]
-> Archiving is permanent! Please [propose archiving](https://github.com/orgs/evoteum/discussions/categories/polls) before proceeding.
+> Archiving is permanent! Please [propose archiving](https://github.com/orgs/evoteum/discussions/new?category=polls) before proceeding.
 
 If the community agree that the repository should be archived,
 1. prepend the repo readme with a note alert that includes a link to the discussion for future context.
 
-> [!NOTE]
-> Following [community discussion](#), this project has been concluded, so this repository is no longer maintained. Thank you to all contributors and users for your support.
+    ```markdown
+    > [!NOTE]
+    > Following [community discussion](link-to-discussion), this project has been concluded, so this repository is no longer maintained. Thank you to all contributors and users for your support.
+    ```
 
 2. add `archived: true` to the repo in `repos.yaml`.
 3. Coffee.

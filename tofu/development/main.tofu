@@ -27,7 +27,11 @@ provider "aws" {
   region = var.aws_region
 }
 
+provider "quay" {
+  url = var.quay_url
+}
+
 provider "github" {
-  owner = var.org_name
+  owner = var.organisation
   app_auth {} # Using `GITHUB_APP_XXX` environment variables in CI
 }
