@@ -16,7 +16,7 @@ module "github_repository" {
 
   management_repo_name = var.repo_name
   management_repo_url  = var.repo_url
-  org_name             = var.organisation
+  organisation         = var.organisation
   artifact_type        = lookup(each.value, "artifact_type", null)
   build_flags          = lookup(each.value, "build_flags", null)
   language             = lookup(each.value, "language", null)
