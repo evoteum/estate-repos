@@ -1,3 +1,7 @@
+locals {
+  repositories = yamldecode(file("${path.module}/../../repos.yaml"))
+}
+
 module "github_repository" {
   source   = "github.com/evoteum/tofu-modules.git//github/repo"
   for_each = local.repositories
