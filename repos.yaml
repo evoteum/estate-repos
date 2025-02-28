@@ -1,5 +1,7 @@
 .github:
   description: GitHub configuration
+containerfiles:
+  description: Reusable Containerfiles
 discussions:
   description: Community Discussions
   has_discussions: true
@@ -18,5 +20,3 @@ testy-mctestface:
   description: Sandbox for testing
 tofu-modules:
   description: Modules for OpenTofu
-containerfiles:
-  description: Reusable Containerfiles
