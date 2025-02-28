@@ -14,6 +14,7 @@ estate-reusable-workflows:
 evoteum.github.io:
   description: Evoteum's website
 planzoco:
+  artifact_type: container
   description: Every question finds its best answer
 testy-mctestface:
   artifact_type: container
