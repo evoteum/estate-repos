@@ -18,3 +18,5 @@ testy-mctestface:
   artifact_type: container
 tofu-modules:
   description: Modules for OpenTofu
+containerfiles:
+  description: Reusable Containerfiles
