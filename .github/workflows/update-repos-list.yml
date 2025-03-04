@@ -1,0 +1,25 @@
+name: update-repos-list
+
+on:
+  push:
+    paths:
+      - "repos.yaml"
+
+jobs:
+  notify-profile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Generate a token
+        id: generate-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.EVOTEUMBOT_APP_ID }}
+          private-key: ${{ secrets.EVOTEUMBOT_APP_PEM_FILE }}
+
+      - name: Trigger Profile Update Workflow in `.github`
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+        run: gh api repos/${{ github.repository_owner }}/.github/dispatches \
+             -X POST \
+             -F event_type="update-repos-list"
