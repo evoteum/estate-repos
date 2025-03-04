@@ -21,7 +21,7 @@ module "quay_repository" {
   organisation = var.organisation
   visibility   = module.github_repository[each.key].visibility
   description = join("", [
-    try(each.value.archived, false) ? "Archived: " : "",
+    coalesce(each.value.archived, false) ? "Archived: " : "",
     each.value.description,
     " ",
     module.github_repository[each.key].html_url
