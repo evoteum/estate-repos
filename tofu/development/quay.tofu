@@ -30,5 +30,5 @@ module "quay_repository" {
 }
 
 removed {
-  from = module.quay_repository
+  from = module.quay_repository[*]
 }
