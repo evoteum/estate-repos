@@ -30,8 +30,5 @@ locals {
 # }
 
 removed {
-  from = module.github_repository.module.quay_repository
-}
-removed {
   from = module.quay_repository
 }
