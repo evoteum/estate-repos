@@ -29,7 +29,7 @@ locals {
     } if contains(keys(local.repositories), repo)
   ]...)
 
-  quay_repo_url_variables = merge([
+  quay_repo_url_variables = local.quay_enabled ? merge([
     for repo in keys(module.quay_repository) : {
       repo = {
         scope = repo
@@ -37,7 +37,7 @@ locals {
         value = module.quay_repository[repo].url
       }
     } if contains(keys(local.repositories), repo)
-  ]...)
+  ]...) : {}
 
   all_github_variables = merge(
     local.github_variables,
