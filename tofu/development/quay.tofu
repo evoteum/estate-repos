@@ -13,7 +13,7 @@ locals {
   }
 }
 module "quay_repository" {
-  source   = "github.com/evoteum/tofu-modules.git//quay/repo"
+  source   = "github.com/evoteum/tofu-modules//quay/repo"
   for_each = local.quay_repository_variables
 
   name         = each.key

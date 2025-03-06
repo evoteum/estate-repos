@@ -19,37 +19,30 @@ locals {
     }
   ]...)
 
+  quay_repository_attributes = [
+    "path",
+    "url",
+  ]
 
-
-  quay_repo_path_variables = merge([
+  quay_variables = merge([
     for repo in keys(module.quay_repository) : {
-      "${repo}-quay_repo_path" = {
+      for attribute in local.quay_repository_attributes :
+      "${repo}-${attribute}" => {
         scope = repo
-        name  = "quay_repo_path"
-        value = module.quay_repository[repo].path
-      }
-    }
-  ]...)
-
-  quay_repo_url_variables = merge([
-    for repo in keys(module.quay_repository) : {
-      "${repo}-quay_repo_url" = {
-        scope = repo
-        name  = "quay_repo_url"
-        value = module.quay_repository[repo].url
+        name  = "quay_repository_${attribute}"
+        value = lookup(module.quay_repository[repo], attribute, null)
       }
     }
   ]...)
 
   all_github_variables = merge(
     local.github_variables,
-    local.quay_repo_path_variables,
-    local.quay_repo_url_variables,
+    local.quay_variables,
   )
 }
 
 module "github_variable" {
-  source   = "github.com/evoteum/tofu-modules.git//github/variable"
+  source   = "github.com/evoteum/tofu-modules//github/variable"
   for_each = local.all_github_variables
   depends_on = [
     module.quay_repository
@@ -57,6 +50,6 @@ module "github_variable" {
 
   sensitive = false
   scope     = each.value.scope
-  name      = upper(each.value.name)
+  name      = each.value.name
   value     = each.value.value
 }
