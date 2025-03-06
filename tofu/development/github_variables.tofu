@@ -31,9 +31,20 @@ locals {
     }
   ]...)
 
+  quay_repo_url_variables = merge([
+    for repo in keys(module.quay_repository) : {
+      "${repo}-quay_repo_url" = {
+        scope = repo
+        name  = "quay_repo_path"
+        value = module.quay_repository[repo].url
+      }
+    }
+  ]...)
+
   all_github_variables = merge(
     local.github_variables,
     local.quay_repo_path_variables,
+    local.quay_repo_url_variables,
   )
 }
 
