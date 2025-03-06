@@ -35,7 +35,7 @@ locals {
     for repo in keys(module.quay_repository) : {
       "${repo}-quay_repo_url" = {
         scope = repo
-        name  = "quay_repo_path"
+        name  = "quay_repo_url"
         value = module.quay_repository[repo].url
       }
     }
