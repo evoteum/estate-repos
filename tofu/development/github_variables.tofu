@@ -27,7 +27,7 @@ locals {
   quay_variables = merge([
     for repo in keys(module.quay_repository) : {
       for attribute in local.quay_repository_attributes :
-      "${repo}-${attribute}" => {
+      "${repo}-quay_repository_${attribute}" => {
         scope = repo
         name  = "quay_repository_${attribute}"
         value = lookup(module.quay_repository[repo], attribute, null)
