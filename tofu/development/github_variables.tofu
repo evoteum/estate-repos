@@ -12,7 +12,7 @@ locals {
     for repo, config in local.repositories : {
       for attribute in local.github_variable_attributes :
       "${repo}-${attribute}" => {
-        scope = repo
+        scope = "repo"
         name  = attribute
         value = lookup(config, attribute, null)
       } if lookup(config, attribute, null) != null
@@ -20,24 +20,20 @@ locals {
   ]...)
 
 
-  quay_variables = merge([
+
+  quay_repo_path_variables = merge([
     for repo in keys(module.quay_repository) : {
-      "${repo}-quay_repo_path" => {
-        scope = repo
+      "${repo}-quay_repo_path" = {
+        scope = "repo"
         name  = "quay_repo_path"
         value = module.quay_repository[repo].path
-      },
-      "${repo}-quay_repo_url" => {
-        scope = repo
-        name  = "quay_repo_url"
-        value = module.quay_repository[repo].url
       }
-    } if contains(keys(local.repositories), repo)
+    }
   ]...)
 
   all_github_variables = merge(
     local.github_variables,
-    local.quay_variables,
+    local.quay_repo_path_variables,
   )
 }
 
