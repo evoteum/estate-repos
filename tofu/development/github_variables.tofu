@@ -19,26 +19,21 @@ locals {
     }
   ]...)
 
-  quay_variables = merge(flatten([
-    for repo in keys(module.quay_repository) : [
-      {
-        key   = "${repo}-quay_repo_path"
-        value = {
-          scope = repo
-          name  = "quay_repo_path"
-          value = module.quay_repository[repo].path
-        }
+
+  quay_variables = merge([
+    for repo in keys(module.quay_repository) : {
+      "${repo}-quay_repo_path" => {
+        scope = repo
+        name  = "quay_repo_path"
+        value = module.quay_repository[repo].path
       },
-      {
-        key   = "${repo}-quay_repo_url"
-        value = {
-          scope = repo
-          name  = "quay_repo_url"
-          value = module.quay_repository[repo].url
-        }
+      "${repo}-quay_repo_url" => {
+        scope = repo
+        name  = "quay_repo_url"
+        value = module.quay_repository[repo].url
       }
-    ] if contains(keys(local.repositories), repo)
-  ])...)
+    } if contains(keys(local.repositories), repo)
+  ]...)
 
   all_github_variables = merge(
     local.github_variables,
