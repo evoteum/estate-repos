@@ -19,5 +19,6 @@ planzoco:
 testy-mctestface:
   artifact_type: container
   description: Sandbox for testing
+  needs_tofu: true
 tofu-modules:
   description: Modules for OpenTofu

@@ -1,4 +1,4 @@
-name: all-environments-tofu-apply
+name: tofu-apply-all-environments
 
 on:
   workflow_dispatch:
@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   deploy-multi-tofu:
-    uses: evoteum/estate-reusable-workflows/.github/workflows/all-environments-tofu-apply.yml@main
+    uses: evoteum/estate-reusable-workflows/.github/workflows/tofu-apply-all-environments.yml@main
     secrets: inherit
     with:
       fail-fast: false
