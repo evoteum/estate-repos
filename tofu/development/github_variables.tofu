@@ -1,11 +1,12 @@
 locals {
   github_variable_attributes = [
-    "source_path",
+    "artifact_type",
+    "build_flags",
     "fail_fast",
     "language",
     "language_version",
-    "artifact_type",
-    "build_flags"
+    "source_path",
+    "todo_issue_disabled",
   ]
 
   github_variables = merge([
