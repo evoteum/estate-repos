@@ -9,7 +9,7 @@ locals {
     for repo, config in local.repositories : repo => {
       for attribute in local.quay_attributes :
       attribute => lookup(config, attribute, null)
-    } if lookup(config, "artifact_type", null) == "container"
+    } if lookup(config, "artefact_type", null) == "container"
   }
 }
 module "quay_repository" {

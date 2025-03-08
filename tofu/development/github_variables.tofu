@@ -1,6 +1,6 @@
 locals {
   github_variable_attributes = [
-    "artifact_type",
+    "artefact_type",
     "build_flags",
     "fail_fast",
     "language",
