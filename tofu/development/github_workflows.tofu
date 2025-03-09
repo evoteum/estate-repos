@@ -6,5 +6,5 @@ module "github_workflows" {
   repository_configuration = each.value
 
   controller_repo_name          = var.repo_name
-  reusable_workflows_repository = "estate-reusable-workflows"
+  reusable_workflows_repository = local.reusable_workflows_repository
 }

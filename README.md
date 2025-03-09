@@ -41,26 +41,27 @@ my-new-repo:
  
 Each repository entry in `repos.yml` can include the following parameters:
 
-| Parameter                | Required | Default      | Permitted values                                               | Description                                                                                      |
-|--------------------------|----------|--------------|----------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| key                      | ❗ Yes    |              | Any string                                                     | The name of the repository.                                                                      |
-| `description`            | ❗ Yes    |              | Any string                                                     | A brief description of the repository.                                                           |
-| `homepage_url`           | 👍 No    |              | Any string                                                     | The URL of the project's homepage.                                                               |
-| `artefact_type`          | 👍 No    |              | `container`                                                    | The deployment artifact that the project should produce. Creates an artifact repository in Quay. |
-| `build_flags`            | 👍 No    |              | Any string                                                     | Flags to add to the build command.                                                               |
-| `language`               | 👍 No    |              | Any string                                                     | The language that the project is written in.                                                     |
-| `language_version`       | 👍 No    |              | Any string                                                     | The version of the language that the project is written in.                                      |
-| `source_path`            | 👍 No    |              | Any string                                                     | Path to the source code directory (not the tofu code)                                            |
-| `topics`                 | 👍 No    |              | List of any strings                                            | A list of topics associated with the repository.                                                 |
-| `archived`               | 👍 No    | false        | `true`, `false`                                                | Whether the repository is archived.                                                              |
-| `environments`           | 👍 No    | [discovered] | List of environment names, "development", "test", "production" | List of environment names. Discovered if omitted.                                                |
-| `fail_fast`              | 👍 No    | true         | `true`, `false`                                                | Whether all deployments should fail if one environment fails.                                    |
-| `has_discussions`        | 👍 No    | false        | `true`, `false`                                                | Whether GitHub Discussions are enabled for the repository.                                       |
-| `has_issues`             | 👍 No    | true         | `true`, `false`                                                | Whether GitHub Issues are enabled for the repository.                                            |
-| `has_projects`           | 👍 No    | false        | `true`, `false`                                                | Whether GitHub Projects are enabled.                                                             |
-| `has_wiki`               | 👍 No    | false        | `true`, `false`                                                | Whether the GitHub Wiki is enabled. Ideally, keep docs in the `docs/` directory.                 |
-| `todo_to_issue_disabled` | 👍 No    | false        | `true`, `false`                                                | If `true`, disables [TODO to Issue](https://github.com/marketplace/actions/todo-to-issue).       |
-| `visibility`             | 👍 No    | `public`     | `public`, `private`                                            | Determines if the repository is public or private.                                               |
+| Parameter             | Required | Default      | Permitted values                                               | Description                                                                                      |
+|-----------------------|----------|--------------|----------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| key                   | ❗ Yes    |              | Any string                                                     | The name of the repository.                                                                      |
+| `description`         | ❗ Yes    |              | Any string                                                     | A brief description of the repository.                                                           |
+| `homepage_url`        | 👍 No    |              | Any string                                                     | The URL of the project's homepage.                                                               |
+| `artefact_type`       | 👍 No    |              | `container`                                                    | The deployment artifact that the project should produce. Creates an artifact repository in Quay. |
+| `build_flags`         | 👍 No    |              | Any string                                                     | Flags to add to the build command.                                                               |
+| `language`            | 👍 No    |              | Any string                                                     | The language that the project is written in.                                                     |
+| `language_version`    | 👍 No    |              | Any string                                                     | The version of the language that the project is written in.                                      |
+| `source_path`         | 👍 No    |              | Any string                                                     | Path to the source code directory (not the tofu code)                                            |
+| `topics`              | 👍 No    |              | List of any strings                                            | A list of topics associated with the repository.                                                 |
+| `archived`            | 👍 No    | false        | `true`, `false`                                                | Whether the repository is archived.                                                              |
+| `environments`        | 👍 No    | [discovered] | List of environment names, "development", "test", "production" | List of environment names. Discovered if omitted.                                                |
+| `fail_fast`           | 👍 No    | true         | `true`, `false`                                                | Whether all deployments should fail if one environment fails.                                    |
+| `has_discussions`     | 👍 No    | false        | `true`, `false`                                                | Whether GitHub Discussions are enabled for the repository.                                       |
+| `has_issues`          | 👍 No    | true         | `true`, `false`                                                | Whether GitHub Issues are enabled for the repository.                                            |
+| `has_projects`        | 👍 No    | false        | `true`, `false`                                                | Whether GitHub Projects are enabled.                                                             |
+| `has_wiki`            | 👍 No    | false        | `true`, `false`                                                | Whether the GitHub Wiki is enabled. Ideally, keep docs in the `docs/` directory.                 |
+| `needs_todo_to_issue` | 👍 No    | false        | `true`, `false`                                                | If [TODO to Issue](https://github.com/marketplace/actions/todo-to-issue) is needed in this repo. |
+| `needs_tofu`          | 👍 No    | false        | `true`, `false`                                                | If OpenTofu is needed in this repo.                                                              |
+| `visibility`          | 👍 No    | `public`     | `public`, `private`                                            | Determines if the repository is public or private.                                               |
 
 
 
