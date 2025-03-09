@@ -10,14 +10,14 @@ module "github_workflows" {
 }
 
 output "debug_github_workflows_repository_configuration" {
-  value = module.github_workflows.repository_configuration
+  value = module.github_workflows["testy-mctestface"].repository_configuration
 }
 
 
 output "debug_github_workflows_workflow_conditions" {
-  value = module.github_workflows.workflow_conditions
+  value = module.github_workflows["testy-mctestface"].workflow_conditions
 }
 
 output "debug_github_workflows_workflow_evaluations" {
-  value = module.github_workflows.workflow_evaluations
+  value = module.github_workflows["testy-mctestface"].workflow_evaluations
 }
