@@ -3,7 +3,7 @@ name: update-repos-list
 on:
   push:
     paths:
-      - "repos.yaml"
+      - "repos.yml"
 
 jobs:
   notify-profile:
@@ -20,6 +20,8 @@ jobs:
       - name: Trigger Profile Update Workflow in `.github`
         env:
           GH_TOKEN: ${{ steps.generate-token.outputs.token }}
-        run: gh api repos/${{ github.repository_owner }}/.github/dispatches \
-             -X POST \
-             -F event_type="update-repos-list"
+        run: |
+          gh api repos/${{ github.repository_owner }}/.github/dispatches \
+            --method POST \
+            --header "Accept: application/vnd.github+json" \
+            --raw-field event_type="update-repos-list"
