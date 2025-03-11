@@ -9,6 +9,9 @@ discussions:
   has_issues: false
 estate-config:
   description: Configuration for the estate
+  needs_tofu: true
+  tofu_build_schedule: "0 1 * * *"
+  environments: development
 estate-reusable-workflows:
   description: Reusable GitHub Actions workflows
 evoteum.github.io:
@@ -16,9 +19,18 @@ evoteum.github.io:
 planzoco:
   artefact_type: container
   description: Every question finds its best answer
+  homepage_url: "https://planzo.co"
+  needs_tofu: true
+planzococom:
+  description: Configures the redirect from planzoco.com to planzo.co
+  homepage_url: "https://planzoco.com"
+  needs_tofu: true
 testy-mctestface:
   artefact_type: container
   description: Sandbox for testing
   needs_tofu: true
 tofu-modules:
   description: Modules for OpenTofu
+terraform-provider-cron-expression-descriptor:
+  description: Terraform provider that converts cron expressions into human readable descriptions.
+  needs_todo_to_issue: true
