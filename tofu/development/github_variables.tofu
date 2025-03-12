@@ -6,7 +6,6 @@ locals {
     "language",
     "language_version",
     "source_path",
-    "todo_issue_disabled",
   ]
 
   github_variables = merge([
