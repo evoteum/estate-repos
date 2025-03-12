@@ -10,8 +10,8 @@ discussions:
 estate-config:
   description: Configuration for the estate
   needs_tofu: true
-  tofu_build_schedule: "0 1 * * *"
-  environments: development
+  tofu_build_schedule: "0 23 * * *"
+  environments: tofu/development
   needs_todo_to_issue: true
 estate-reusable-workflows:
   description: Reusable GitHub Actions workflows
