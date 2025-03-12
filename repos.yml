@@ -12,6 +12,7 @@ estate-config:
   needs_tofu: true
   tofu_build_schedule: "0 1 * * *"
   environments: development
+  needs_todo_to_issue: true
 estate-reusable-workflows:
   description: Reusable GitHub Actions workflows
 evoteum.github.io:
