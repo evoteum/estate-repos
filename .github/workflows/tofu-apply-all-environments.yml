@@ -17,5 +17,5 @@ jobs:
     uses: evoteum/estate-reusable-workflows/.github/workflows/tofu-apply-all-environments.yml@main
     secrets: inherit
     with:
-      fail-fast: false
-      environment-directories: tofu/development
+      fail_fast: false
+      environment_directories: tofu/development
