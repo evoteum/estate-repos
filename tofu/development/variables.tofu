@@ -22,3 +22,9 @@ variable "repo_url" {
   type        = string
   description = "The HTML URL of this repository"
 }
+
+variable "cloudflare_account_id" {
+  type = string
+  description = "Cloudflare Account ID"
+  sensitive = true
+}
