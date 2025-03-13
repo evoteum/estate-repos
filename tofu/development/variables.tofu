@@ -24,7 +24,7 @@ variable "repo_url" {
 }
 
 variable "cloudflare_account_id" {
-  type = string
+  type        = string
   description = "Cloudflare Account ID"
-  sensitive = true
+  sensitive   = true
 }

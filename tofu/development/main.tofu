@@ -11,13 +11,17 @@ terraform {
       source  = "hashicorp/aws"
       version = "5.84.0"
     }
-    random = {
-      source  = "hashicorp/random"
-      version = "3.6.0"
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "5.1.0"
     }
     github = {
       source  = "integrations/github"
       version = "6.5.0"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "3.6.0"
     }
     quay = {
       source = "registry.terraform.io/enthought/quay"
@@ -29,12 +33,15 @@ provider "aws" {
   region = var.aws_region
 }
 
-provider "quay" {
-  url = var.quay_url
+provider "cloudflare" {
 }
 
 provider "github" {
   owner = var.organisation
   # Using `GITHUB_APP_XXX` environment variables in CI
   app_auth {}
+}
+
+provider "quay" {
+  url = var.quay_url
 }

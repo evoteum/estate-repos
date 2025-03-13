@@ -1,7 +1,7 @@
 locals {
   required_cloudflare_zones = {
     for repository, configuration in local.repositories :
-      repository => split("/", trimprefix(trimprefix(configuration.homepage_url, "http://"), "https://"))[0]
+    repository => split("/", trimprefix(trimprefix(configuration.homepage_url, "http://"), "https://"))[0]
     if try(configuration.homepage_url, null) != null
   }
 }
