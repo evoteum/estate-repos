@@ -30,6 +30,7 @@ testy-mctestface:
   artefact_type: container
   description: Sandbox for testing
   needs_tofu: true
+  fail_fast: false
 tofu-modules:
   description: Modules for OpenTofu
 terraform-provider-cron-expression-descriptor:
