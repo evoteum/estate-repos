@@ -83,30 +83,30 @@ my-new-repo:
  
 Each repository entry in `repos.yml` can include the following parameters:
 
-| Parameter             | Required | Default      | Permitted values                                               | Description                                                                                                                      |
-|-----------------------|----------|--------------|----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| key                   | ❗ Yes    |              | Any string                                                     | The name of the repository.                                                                                                      |
-| `description`         | ❗ Yes    |              | Any string                                                     | A brief description of the repository.                                                                                           |
-| `homepage_url`        | 👍 No    |              | Any string                                                     | The URL of the project's homepage. Creates a Cloudflare zone. Ensure that nameservers are set to provided `name_servers` output. |
-| `artefact_type`       | 👍 No    |              | `container`                                                    | The deployment artifact that the project should produce. Creates an artifact repository in Quay.                                 |
-| `build_flags`         | 👍 No    |              | Any string                                                     | Flags to add to the build command.                                                                                               |
-| `language`            | 👍 No    |              | Any string                                                     | The language that the project is written in.                                                                                     |
-| `language_version`    | 👍 No    |              | Any string                                                     | The version of the language that the project is written in.                                                                      |
-| `source_path`         | 👍 No    |              | Any string                                                     | Path to the source code directory (not the tofu code)                                                                            |
-| `topics`              | 👍 No    |              | List of any strings                                            | A list of topics associated with the repository.                                                                                 |
-| `trigger_files`       | 👍 No    |              | List of any strings                                            | A list of files that will trigger a build.                                                                                       |
-| `archived`            | 👍 No    | false        | `true`, `false`                                                | Whether the repository is archived.                                                                                              |
-| `environments`        | 👍 No    | [discovered] | List of environment names, "development", "test", "production" | List of environment names. Discovered if omitted.                                                                                |
-| `fail_fast`           | 👍 No    | true         | `true`, `false`                                                | Whether all deployments should fail if one environment fails.                                                                    |
-| `has_discussions`     | 👍 No    | false        | `true`, `false`                                                | Whether GitHub Discussions are enabled for the repository.                                                                       |
-| `has_issues`          | 👍 No    | true         | `true`, `false`                                                | Whether GitHub Issues are enabled for the repository.                                                                            |
-| `has_projects`        | 👍 No    | false        | `true`, `false`                                                | Whether GitHub Projects are enabled.                                                                                             |
-| `has_wiki`            | 👍 No    | false        | `true`, `false`                                                | Whether the GitHub Wiki is enabled. Ideally, keep docs in the `docs/` directory.                                                 |
-| `needs_todo_to_issue` | 👍 No    | false        | `true`, `false`                                                | If [TODO to Issue](https://github.com/marketplace/actions/todo-to-issue) is needed in this repo.                                 |
-| `needs_tofu`          | 👍 No    | false        | `true`, `false`                                                | If OpenTofu is needed in this repo.                                                                                              |
-| `tofu_build_schedule` | 👍 No    |              | cron expression                                                | The time at which the OpenTofu build should run.                                                                                 |
-| `app_build_schedule`  | 👍 No    |              | cron expression                                                | The time at which the application build should run.                                                                              |
-| `visibility`          | 👍 No    | `public`     | `public`, `private`                                            | Determines if the repository is public or private.                                                                               |
+| Parameter             | Required | Default      | Permitted values                                               | Description                                                                                                                       |
+|-----------------------|----------|--------------|----------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| key                   | ❗ Yes    |              | Any string                                                     | The name of the repository.                                                                                                       |
+| `description`         | ❗ Yes    |              | Any string                                                     | A brief description of the repository.                                                                                            |
+| `homepage_url`        | 👍 No    |              | Any string                                                     | The web address of the application. Creates a Cloudflare zone. Ensure that nameservers are set to provided `name_servers` output. |
+| `artefact_type`       | 👍 No    |              | `container`                                                    | The deployment artifact that the project should produce. Creates an artifact repository in Quay.                                  |
+| `build_flags`         | 👍 No    |              | Any string                                                     | Flags to add to the build command.                                                                                                |
+| `language`            | 👍 No    |              | Any string                                                     | The language that the project is written in.                                                                                      |
+| `language_version`    | 👍 No    |              | Any string                                                     | The version of the language that the project is written in.                                                                       |
+| `source_path`         | 👍 No    |              | Any string                                                     | Path to the source code directory (not the tofu code)                                                                             |
+| `topics`              | 👍 No    |              | List of any strings                                            | A list of topics associated with the repository.                                                                                  |
+| `trigger_files`       | 👍 No    |              | List of any strings                                            | A list of files that will trigger a build.                                                                                        |
+| `archived`            | 👍 No    | false        | `true`, `false`                                                | Whether the repository is archived.                                                                                               |
+| `environments`        | 👍 No    | [discovered] | List of environment names, "development", "test", "production" | List of environment names. Discovered if omitted.                                                                                 |
+| `fail_fast`           | 👍 No    | true         | `true`, `false`                                                | Whether all deployments should fail if one environment fails.                                                                     |
+| `has_discussions`     | 👍 No    | false        | `true`, `false`                                                | Whether GitHub Discussions are enabled for the repository.                                                                        |
+| `has_issues`          | 👍 No    | true         | `true`, `false`                                                | Whether GitHub Issues are enabled for the repository.                                                                             |
+| `has_projects`        | 👍 No    | false        | `true`, `false`                                                | Whether GitHub Projects are enabled.                                                                                              |
+| `has_wiki`            | 👍 No    | false        | `true`, `false`                                                | Whether the GitHub Wiki is enabled. Ideally, keep docs in the `docs/` directory.                                                  |
+| `needs_todo_to_issue` | 👍 No    | false        | `true`, `false`                                                | If [TODO to Issue](https://github.com/marketplace/actions/todo-to-issue) is needed in this repo.                                  |
+| `needs_tofu`          | 👍 No    | false        | `true`, `false`                                                | If OpenTofu is needed in this repo.                                                                                               |
+| `tofu_build_schedule` | 👍 No    |              | cron expression                                                | The time at which the OpenTofu build should run.                                                                                  |
+| `app_build_schedule`  | 👍 No    |              | cron expression                                                | The time at which the application build should run.                                                                               |
+| `visibility`          | 👍 No    | `public`     | `public`, `private`                                            | Determines if the repository is public or private.                                                                                |
 
 
 ### Archiving repos
@@ -130,6 +130,21 @@ If the community agree that the repository should be archived,
 > We do not delete repositories because they may contain valuable information.
 > 
 > Removing repos from repos.yaml will cause a [`prevent_destroy`](https://opentofu.org/docs/language/meta-arguments/lifecycle/#:~:text=contains%20more%20details.-,prevent_destroy,-(bool)%20-%20This%20meta) error.
+
+### Fixing Drift
+
+OpenTofu every night at 23:00 to detect and correct any drift that may have occurred during the day. This ensures that:
+
+- Manual changes made to repositories are reverted to their defined state
+- External API integrations remain properly configured
+- Security settings and access controls stay aligned with specifications
+- Repository settings consistently match their `repos.yml` definitions
+
+This automated drift prevention means repository configurations are truly managed as code, ensuring that the `repos.yml` file remains the single source of truth for all repository settings.
+
+
+> [!IMPORTANT]  
+> Any manual repository configuration changes you make will be reverted. Configure repositories using `repos.yml`.
 
 
 ## Contributing

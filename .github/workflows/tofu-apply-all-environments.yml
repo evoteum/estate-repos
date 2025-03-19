@@ -6,6 +6,8 @@ on:
     paths:
       - "tofu/**"
       - repos.yml
+  schedule:
+    - cron: "0 23 * * *"  # Every day at 11 PM
 
 permissions:
   id-token: write
