@@ -30,6 +30,7 @@ testy-mctestface:
   artefact_type: container
   description: Sandbox for testing
   needs_tofu: true
+  needs_auto_docs : true
   fail_fast: false
 tofu-modules:
   description: Modules for OpenTofu
