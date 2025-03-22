@@ -5,6 +5,12 @@ on:
     paths:
       - "repos.yml"
 
+permissions:
+  id-token: write
+  contents: write
+  actions: write
+
+
 jobs:
   notify-profile:
     runs-on: ubuntu-latest
