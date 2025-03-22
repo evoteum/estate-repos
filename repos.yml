@@ -21,6 +21,7 @@ planzoco:
   artefact_type: container
   description: Every question finds its best answer
   homepage_url: "https://planzo.co"
+  language: go
   needs_auto_docs: true
   needs_tofu: true
   source_path: go/planzoco
