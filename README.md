@@ -133,7 +133,7 @@ If the community agree that the repository should be archived,
 
 ### Fixing Drift
 
-OpenTofu every night at 23:00 to detect and correct any drift that may have occurred during the day. This ensures that:
+OpenTofu runs every night at 23:00 to detect and correct any drift that may have occurred during the day. This ensures that:
 
 - Manual changes made to repositories are reverted to their defined state
 - External API integrations remain properly configured

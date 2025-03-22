@@ -23,6 +23,7 @@ planzoco:
   homepage_url: "https://planzo.co"
   needs_auto_docs: true
   needs_tofu: true
+  source_path: go/planzoco
 planzococom:
   description: Configures the redirect from planzoco.com to planzo.co
   homepage_url: "https://planzoco.com"
