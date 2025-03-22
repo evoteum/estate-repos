@@ -6,12 +6,7 @@ on:
     paths:
       - "repos.yml"
 
-permissions:
-  id-token: write
-  contents: write
-  actions: write
-  repository-projects: write
-
+permissions: write-all
 
 jobs:
   notify-profile:
