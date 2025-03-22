@@ -21,6 +21,7 @@ planzoco:
   artefact_type: container
   description: Every question finds its best answer
   homepage_url: "https://planzo.co"
+  needs_auto_docs: true
   needs_tofu: true
 planzococom:
   description: Configures the redirect from planzoco.com to planzo.co
