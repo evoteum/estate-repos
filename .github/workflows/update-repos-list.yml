@@ -1,6 +1,7 @@
 name: update-repos-list
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - "repos.yml"
