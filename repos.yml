@@ -34,6 +34,8 @@ planzococom:
 testy-mctestface:
   artefact_type: container
   description: Sandbox for testing
+  language: python
+  language_version: 3.13.0
   needs_tofu: true
   needs_auto_docs : true
   fail_fast: false
