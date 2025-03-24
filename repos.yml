@@ -29,6 +29,7 @@ planzoco:
 planzococom:
   description: Configures the redirect from planzoco.com to planzo.co
   homepage_url: "https://planzoco.com"
+  needs_auto_docs: true
   needs_tofu: true
 testy-mctestface:
   artefact_type: container
