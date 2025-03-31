@@ -43,7 +43,7 @@ locals {
       scope     = repo
       name      = "cloudflare_zone_id"
       value     = module.cloudflare_zone[repo].id
-      sensitive = false
+      sensitive = true
     }
   }
 
