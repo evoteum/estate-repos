@@ -38,7 +38,7 @@ testy-mctestface:
   language_version: 3.13.0
   source_path: python
   needs_tofu: true
-  needs_auto_docs : true
+  needs_auto_docs: true
   fail_fast: false
 tofu-modules:
   description: Modules for OpenTofu
