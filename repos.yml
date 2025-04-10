@@ -22,7 +22,7 @@ planzoco:
   description: Every question finds its best answer
   homepage_url: "https://planzo.co"
   language: go
-  language_version: 1.24
+  language_version: 1.24.0
   needs_auto_docs: true
   needs_tofu: true
   source_path: go/planzoco
