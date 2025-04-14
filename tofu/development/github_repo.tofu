@@ -12,7 +12,7 @@ module "github_repository" {
   has_wiki             = lookup(each.value, "has_wiki", null)
   homepage_url         = lookup(each.value, "homepage_url", null)
   management_repo_name = var.repo_name
-  management_repo_url  = var.repo_url
+  management_repo_url  = var.repository_url
   organisation         = var.organisation
   topics               = lookup(each.value, "topics", null)
   visibility           = lookup(each.value, "visibility", null)

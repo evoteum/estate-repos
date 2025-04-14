@@ -14,7 +14,7 @@ module "github_documentation" {
   repository_owner     = var.organisation
   artefact_type        = lookup(each.value, "artefact_type", null)
   management_repo_name = var.repo_name
-  management_repo_url  = var.repo_url
+  management_repo_url  = var.repository_url
   quay_repository_url  = lookup(each.value, "artefact_type", null) == "container" ? module.quay_repository[each.key].url : null
 
 }

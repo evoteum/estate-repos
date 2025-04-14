@@ -3,6 +3,12 @@ variable "aws_region" {
   description = "The AWS region to deploy the infrastructure to."
 }
 
+variable "cloudflare_account_id" {
+  type        = string
+  description = "Cloudflare Account ID"
+  sensitive   = true
+}
+
 variable "organisation" {
   type        = string
   description = "The name of the organisation."
@@ -18,13 +24,7 @@ variable "repo_name" {
   description = "The name of this repository."
 }
 
-variable "repo_url" {
+variable "repository_url" {
   type        = string
   description = "The HTML URL of this repository"
-}
-
-variable "cloudflare_account_id" {
-  type        = string
-  description = "Cloudflare Account ID"
-  sensitive   = true
 }
