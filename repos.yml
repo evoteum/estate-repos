@@ -46,4 +46,5 @@ terraform-provider-cron-expression-descriptor:
   description: Terraform provider that converts cron expressions into human readable descriptions.
   needs_todo_to_issue: true
 apprunner-go-runtime-app:
-  Testing AWS App runner - clone of abhirockzz/apprunner-go-runtime-app
+  description: Testing AWS App runner - clone of abhirockzz/apprunner-go-runtime-app
+  artefact_type: source
