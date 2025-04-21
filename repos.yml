@@ -48,3 +48,5 @@ terraform-provider-cron-expression-descriptor:
 apprunner-go-runtime-app:
   description: Testing AWS App runner - clone of abhirockzz/apprunner-go-runtime-app
   artefact_type: source
+platform-infrastructure:
+  description: Shared infrastructure for the Evoteum platform
