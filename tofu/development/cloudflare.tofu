@@ -25,14 +25,14 @@ locals {
 
 }
 
-# module "cloudflare_zone" {
-#   source   = "github.com/evoteum/tofu-modules//cloudflare/zone"
-#   for_each = local.required_cloudflare_zones
-#
-#   account_id  = var.cloudflare_account_id
-#   domain_name = each.value
-# }
-#
+module "cloudflare_zone" {
+  source   = "github.com/evoteum/tofu-modules//cloudflare/zone"
+  for_each = local.required_cloudflare_zones
+
+  account_id  = var.cloudflare_account_id
+  domain_name = each.value
+}
+
 # module "cloudflare_record" {
 #   source   = "github.com/evoteum/tofu-modules//cloudflare/record"
 #   for_each = local.all_dns_records
