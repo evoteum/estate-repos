@@ -40,6 +40,7 @@ testy-mctestface:
   needs_tofu: true
   needs_auto_docs: true
   fail_fast: false
+  deploy: true
 tofu-modules:
   description: Modules for OpenTofu
 terraform-provider-cron-expression-descriptor:
@@ -50,3 +51,4 @@ apprunner-go-runtime-app:
   artefact_type: source
 platform-infrastructure:
   description: Shared infrastructure for the Evoteum platform
+  needs_tofu: true
