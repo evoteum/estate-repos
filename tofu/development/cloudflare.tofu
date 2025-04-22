@@ -19,9 +19,9 @@ locals {
 #     }
 #   ]...)
 
-  all_dns_records = merge(
-    local.certificate_dns_records
-  )
+#   all_dns_records = merge(
+#     local.certificate_dns_records
+#   )
 
 }
 
