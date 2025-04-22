@@ -37,18 +37,18 @@ locals {
     }
   ]...)
 
-  cloudflare_zone_variables = {
-    for repo in keys(local.required_cloudflare_zones) :
-    "${repo}-cloudflare_zone_id" => {
-      scope     = repo
-      name      = "cloudflare_zone_id"
-      value     = module.cloudflare_zone[repo].id
-      sensitive = true
-    }
-  }
+#   cloudflare_zone_variables = {
+#     for repo in keys(local.required_cloudflare_zones) :
+#     "${repo}-cloudflare_zone_id" => {
+#       scope     = repo
+#       name      = "cloudflare_zone_id"
+#       value     = module.cloudflare_zone[repo].id
+#       sensitive = true
+#     }
+#   }
 
   all_github_variables = merge(
-    local.cloudflare_zone_variables,
+#     local.cloudflare_zone_variables,
     local.github_variables,
     local.quay_variables,
   )
