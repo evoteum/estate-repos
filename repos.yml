@@ -52,3 +52,5 @@ apprunner-go-runtime-app:
 platform-infrastructure:
   description: Shared infrastructure for the Evoteum platform
   needs_tofu: true
+  homepage_url: https://evoteum.dev
+  type: infrastructure
