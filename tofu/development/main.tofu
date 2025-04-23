@@ -12,7 +12,7 @@ terraform {
       version = "5.84.0"
     }
     cloudflare = {
-      source  = "cloudflare/cloudflare"
+      source = "cloudflare/cloudflare"
       # Thow shalt not upgrade to v5 less ye seeketh chaos, confusion and dragons. Ye be warned.
       version = "4.52.0"
     }
@@ -21,7 +21,7 @@ terraform {
       version = "6.5.0"
     }
     netparse = {
-      source = "gmeligio/netparse"
+      source  = "gmeligio/netparse"
       version = "0.0.3"
     }
     random = {

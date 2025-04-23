@@ -26,7 +26,3 @@ locals {
     if try(configuration.homepage_url, null) != null
   }
 }
-
-output "repository_hostnames" {
-  value = local.repository_hostnames
-}
