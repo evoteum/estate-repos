@@ -47,7 +47,18 @@ locals {
     }
   }
 
+  certificate_variables = {
+    for repo in module.aws_certificate :
+    "${repo}-certificate_arn" => {
+      scope     = repo
+      name      = "certificate_arn"
+      value     = module.aws_certificate[repo].arn
+      sensitive = true
+    }
+  }
+
   all_github_variables = merge(
+    local.certificate_variables,
     local.cloudflare_zone_variables,
     local.github_variables,
     local.quay_variables,
