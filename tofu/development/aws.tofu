@@ -11,12 +11,12 @@ locals {
 module "aws_certificate" {
   source = "github.com/evoteum/tofu-modules//aws/certificate"
 
-  for_each = local.repository_hostnames
+  for_each = local.repository_homepage_urls
 
   domain_name               = each.value
 }
 
 
-output "repository_hostnames" {
-  value = local.repository_hostnames
+output "repository_homepage_urls" {
+  value = local.repository_homepage_urls
 }

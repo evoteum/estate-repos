@@ -1,6 +1,6 @@
 module "cloudflare_zone" {
   source   = "github.com/evoteum/tofu-modules//cloudflare/zone"
-  for_each = local.repository_hostnames
+  for_each = local.repository_homepage_urls
 
   account_id  = var.cloudflare_account_id
   domain_name = each.value

@@ -38,7 +38,7 @@ locals {
   ]...)
 
   cloudflare_zone_variables = {
-    for repo in keys(local.repository_hostnames) :
+    for repo in keys(local.repository_homepage_urls) :
     "${repo}-cloudflare_zone_id" => {
       scope     = repo
       name      = "cloudflare_zone_id"
