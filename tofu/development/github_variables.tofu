@@ -52,7 +52,7 @@ locals {
     "${repo}-certificate_arn" => {
       scope     = repo
       name      = "certificate_arn"
-      value     = module.aws_certificate[repo].arn
+      value     = module.aws_certificate[repo].certificate_arn
       sensitive = true
     }
   }
