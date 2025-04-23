@@ -17,9 +17,9 @@ locals {
 #     }
 #   ]...)
 
-  all_dns_records = merge(
-    local.certificate_dns_records
-  )
+#   all_dns_records = merge(
+#     local.certificate_dns_records
+#   )
   repository_hostnames = {
     for repository, configuration in local.repositories :
     repository => provider::netparse::parse_url(configuration.homepage_url).host
