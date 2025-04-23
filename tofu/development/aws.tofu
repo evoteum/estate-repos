@@ -20,3 +20,17 @@ module "aws_certificate" {
 output "repository_homepage_urls" {
   value = local.repository_homepage_urls
 }
+
+resource "aws_acm_certificate_validation" "this" {
+  for_each = local.repository_homepage_urls
+
+  certificate_arn = module.aws_certificate[each.key].certificate_arn
+
+  validation_record_fqdns = [
+    for dvo in values(module.aws_certificate[each.key].domain_validation_options) :
+    dvo.name
+  ]
+  depends_on = [
+    module.cloudflare_record
+  ]
+}
