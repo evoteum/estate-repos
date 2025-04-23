@@ -17,6 +17,7 @@ module "cloudflare_record" {
   proxied       = each.value.proxied
   time_to_live  = each.value.ttl
   tags = {
-    repository_url: var.repository_url
+    repository_url = var.repository_url
+    ManagedBy = "OpenTofu"
   }
 }
