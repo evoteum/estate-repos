@@ -14,5 +14,7 @@ module "aws_certificate" {
   for_each = local.repository_hostnames
 
   domain_name               = each.value
-  subject_alternative_names = "www.${each.value}"
+  subject_alternative_names = [
+    "www.${each.value}"
+  ]
 }

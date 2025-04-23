@@ -19,7 +19,7 @@ variable "quay_url" {
   description = "The URL of the Quay server"
 }
 
-variable "repo_name" {
+variable "repository_name" {
   type        = string
   description = "The name of this repository."
 }
