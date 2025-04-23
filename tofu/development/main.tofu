@@ -13,11 +13,16 @@ terraform {
     }
     cloudflare = {
       source  = "cloudflare/cloudflare"
+      # Thow shalt not upgrade to v5 less ye seeketh chaos, confusion and dragons. Ye be warned.
       version = "4.52.0"
     }
     github = {
       source  = "integrations/github"
       version = "6.5.0"
+    }
+    netparse = {
+      source = "gmeligio/netparse"
+      version = "0.0.3"
     }
     random = {
       source  = "hashicorp/random"
