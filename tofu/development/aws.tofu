@@ -15,3 +15,8 @@ module "aws_certificate" {
 
   domain_name               = each.value
 }
+
+
+output "repository_hostnames" {
+  value = local.repository_hostnames
+}
