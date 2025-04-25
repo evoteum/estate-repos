@@ -54,3 +54,4 @@ platform-infrastructure:
   needs_tofu: true
   homepage_url: https://evoteum.dev
   type: infrastructure
+  needs_auto_docs: true
