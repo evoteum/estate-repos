@@ -19,6 +19,11 @@ variable "quay_url" {
   description = "The URL of the Quay server"
 }
 
+variable "repository_id" {
+  type        = string
+  description = "The GitHub API ID of this repository."
+}
+
 variable "repository_name" {
   type        = string
   description = "The name of this repository."

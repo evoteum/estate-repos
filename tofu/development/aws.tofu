@@ -13,7 +13,7 @@ module "aws_certificate" {
 
   for_each = local.repository_homepage_urls
 
-  domain_name               = each.value
+  domain_name = each.value
 }
 
 

@@ -38,6 +38,7 @@ provider "aws" {
       Project       = var.repository_name
       ManagedBy     = "OpenTofu"
       RepositoryURL = var.repository_url
+      RepositoryID  = var.repository_id
     }
   }
 }
