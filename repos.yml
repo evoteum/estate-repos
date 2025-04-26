@@ -31,6 +31,7 @@ planzococom:
   homepage_url: "https://planzoco.com"
   needs_auto_docs: true
   needs_tofu: true
+  type: redirect
 testy-mctestface:
   artefact_type: container
   description: Sandbox for testing

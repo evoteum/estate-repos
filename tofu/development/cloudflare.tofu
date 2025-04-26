@@ -55,17 +55,22 @@ module "cloudflare_record" {
 }
 
 resource "cloudflare_page_rule" "redirect_root_to_www" {
-  for_each = module.cloudflare_zone
+  for_each = {
+    for repo, config in local.repositories :
+    repo => config
+    if try(config.type, "") != "redirect"
+  }
 
-  zone_id = each.value.id
-  target  = "${each.value.zone}/*"
+  zone_id = module.cloudflare_zone[each.key].id
+  target  = "${provider::netparse::parse_url(each.value.homepage_url)}/*"
 
   actions {
     forwarding_url {
-      url         = "https://www.${each.value.zone}/$1"
+      url         = "${provider::netparse::parse_url(each.value.homepage_url)}/$1"
       status_code = 301
     }
   }
 
   priority = 1
 }
+

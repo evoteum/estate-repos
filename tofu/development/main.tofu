@@ -20,6 +20,10 @@ terraform {
       source  = "integrations/github"
       version = "6.5.0"
     }
+    netparse = {
+      source  = "gmeligio/netparse"
+      version = "0.0.3"
+    }
     random = {
       source  = "hashicorp/random"
       version = "3.6.0"
