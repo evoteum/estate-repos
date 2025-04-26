@@ -58,11 +58,11 @@ resource "cloudflare_page_rule" "redirect_root_to_www" {
   for_each = module.cloudflare_zone
 
   zone_id = each.value.id
-  target  = "${each.value.name}/*"
+  target  = "${each.value.zone}/*"
 
   actions {
     forwarding_url {
-      url         = "https://www.${each.value.name}/$1"
+      url         = "https://www.${each.value.zone}/$1"
       status_code = 301
     }
   }
