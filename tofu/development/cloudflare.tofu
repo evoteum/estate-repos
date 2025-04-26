@@ -58,7 +58,7 @@ resource "cloudflare_page_rule" "redirect_root_to_www" {
   for_each = {
     for repo, config in local.repositories :
     repo => config
-    if try(config.type, "") != "redirect"
+    if try(config.type, "") != "redirect" && try(config.homepage_url, null) != null
   }
 
   zone_id = module.cloudflare_zone[each.key].id
