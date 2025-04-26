@@ -24,10 +24,11 @@ locals {
     }
   }
 
-  all_dns_records = merge(
-    local.certificate_dns_records,
-    local.alb_dns_records,
-  )
+  all_dns_records = {
+    for key, value in local.all_dns_records :
+    key => value
+    if try(local.repositories[key].type, "") != "redirect"
+  }
 }
 
 module "cloudflare_zone" {
