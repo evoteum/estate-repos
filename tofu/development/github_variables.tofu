@@ -64,10 +64,10 @@ locals {
     local.quay_variables,
   )
 
-  all_repositories = concat(
+  all_repositories = toset(concat(
     keys(local.repositories),
     ["estate-repos"],
-  )
+  ))
 }
 
 module "github_variable" {
