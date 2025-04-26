@@ -66,7 +66,7 @@ locals {
 
   all_repositories = concat(
     keys(local.repositories),
-    "estate-repos",
+    ["estate-repos"],
   )
 }
 
