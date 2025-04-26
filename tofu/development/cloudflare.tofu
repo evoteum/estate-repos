@@ -62,11 +62,11 @@ resource "cloudflare_page_rule" "redirect_root_to_www" {
   }
 
   zone_id = module.cloudflare_zone[each.key].id
-  target  = "${provider::netparse::parse_url(each.value.homepage_url)}/*"
+  target  = "${provider::netparse::parse_url(each.value.homepage_url).host}/*"
 
   actions {
     forwarding_url {
-      url         = "${provider::netparse::parse_url(each.value.homepage_url)}/$1"
+      url         = "https://www.${provider::netparse::parse_url(each.value.homepage_url).host}/$1"
       status_code = 301
     }
   }
