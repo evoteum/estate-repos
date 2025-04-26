@@ -16,8 +16,8 @@ locals {
   alb_dns_records = {
     for repository, homepage_url in local.repository_homepage_urls : repository => {
       zone_id = module.cloudflare_zone[repository].id
-      name    = "@"
-      type    = "A"
+      name    = "www"
+      type    = "CNAME"
       value   = var.production_alb_dns_name
       proxied = false
       ttl     = 60
@@ -52,4 +52,20 @@ module "cloudflare_record" {
     repository_url = var.repository_url
     ManagedBy      = "OpenTofu"
   }
+}
+
+resource "cloudflare_page_rule" "redirect_root_to_www" {
+  for_each = module.cloudflare_zone
+
+  zone_id = each.value.id
+  target  = "${each.value.name}/*"
+
+  actions {
+    forwarding_url {
+      url         = "https://www.${each.value.name}/$1"
+      status_code = 301
+    }
+  }
+
+  priority = 1
 }
