@@ -33,3 +33,8 @@ variable "repository_url" {
   type        = string
   description = "The HTML URL of this repository"
 }
+
+variable "production_alb_dns_name" {
+  type        = string
+  description = "The DNS name of the production load balancer"
+}

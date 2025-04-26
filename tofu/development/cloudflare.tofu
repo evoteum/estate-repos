@@ -1,3 +1,35 @@
+locals {
+  certificate_dns_records = merge([
+    for repo, cert in module.aws_certificate : {
+      for domain, dvo in cert.domain_validation_options :
+      "${repo}-${domain}" => {
+        zone_id = module.cloudflare_zone[repo].id
+        name    = dvo.name
+        type    = dvo.type
+        value   = dvo.value
+        proxied = false
+        ttl     = 60
+      }
+    }
+  ]...)
+
+  alb_dns_records = {
+    for repository, homepage_url in local.repository_homepage_urls : repository => {
+      zone_id = module.cloudflare_zone[repository].id
+      name    = "@"
+      type    = "A"
+      value   = var.production_alb_dns_name
+      proxied = false
+      ttl     = 60
+    }
+  }
+
+  all_dns_records = merge(
+    local.certificate_dns_records,
+    local.alb_dns_records,
+  )
+}
+
 module "cloudflare_zone" {
   source   = "github.com/evoteum/tofu-modules//cloudflare/zone"
   for_each = local.repository_homepage_urls
