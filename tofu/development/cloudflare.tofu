@@ -24,7 +24,13 @@ locals {
     }
   }
 
-  all_dns_records = {
+  all_dns_records = merge(
+    local.certificate_dns_records,
+    local.alb_dns_records,
+  )
+
+
+  all_dns_records_non_redirect = {
     for key, value in local.all_dns_records :
     key => value
     if try(local.repositories[key].type, "") != "redirect"
@@ -41,7 +47,7 @@ module "cloudflare_zone" {
 
 module "cloudflare_record" {
   source   = "github.com/evoteum/tofu-modules//cloudflare/record"
-  for_each = local.all_dns_records
+  for_each = local.all_dns_records_non_redirect
 
   zone_id      = each.value.zone_id
   name         = each.value.name
