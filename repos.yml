@@ -56,3 +56,5 @@ platform-infrastructure:
   homepage_url: https://evoteum.dev
   type: infrastructure
   needs_auto_docs: true
+pre-commit-hooks:
+  description: Reusable pre-commit hooks for managing code style and quality
