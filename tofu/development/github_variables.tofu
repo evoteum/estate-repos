@@ -87,4 +87,5 @@ module "github_set_repository_id" {
   for_each        = local.all_repositories
   source          = "github.com/evoteum/tofu-modules//github/set_repository_id"
   repository_name = each.key
+  depends_on = [module.github_repository]
 }
