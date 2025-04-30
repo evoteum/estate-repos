@@ -64,10 +64,16 @@ locals {
     local.quay_variables,
   )
 
-  all_repositories = toset(concat(
-    keys(local.repositories),
-    ["estate-repos"],
-  ))
+  repository_id_map = merge(
+    {
+      var.repository_name = data.github_repository.this.id
+    },
+    {
+      for name, mod in module.github_repository :
+      name => mod.id
+    }
+  )
+
 }
 
 module "github_variable" {
@@ -84,8 +90,8 @@ module "github_variable" {
 }
 
 module "github_set_repository_id" {
-  for_each        = local.all_repositories
+  for_each        = local.repository_id_map
   source          = "github.com/evoteum/tofu-modules//github/set_repository_id"
   repository_name = each.key
-  repository_id = module.github_repository[each.key].id
+  repository_id   = each.value
 }
