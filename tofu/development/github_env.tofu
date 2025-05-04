@@ -11,6 +11,4 @@ module "github_tofu_env" {
 
   repository_name      = each.key
   repository_owner     = var.organisation
-  management_repo_name = var.repository_name
-  management_repo_url  = var.repository_url
 }
