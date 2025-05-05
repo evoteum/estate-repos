@@ -1,5 +1,6 @@
 locals {
   github_variable_attributes = [
+    "archived",
     "build_flags",
     "description",
     "fail_fast",
