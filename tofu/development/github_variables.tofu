@@ -1,11 +1,12 @@
 locals {
   github_variable_attributes = [
-    "artefact_type",
     "build_flags",
+    "description",
     "fail_fast",
     "language",
     "language_version",
     "source_path",
+    "visibility",
   ]
 
   github_variables = merge([
@@ -13,65 +14,15 @@ locals {
       for attribute in local.github_variable_attributes :
       "${repo}-${attribute}" => {
         scope     = repo
-        name      = attribute
+        name      = "repository_${attribute}"
         value     = lookup(config, attribute, null)
         sensitive = false
       } if lookup(config, attribute, null) != null
     }
   ]...)
 
-  quay_repository_attributes = [
-    "path",
-    "url",
-  ]
-
-  quay_variables = merge([
-    for repo in keys(module.quay_repository) : {
-      for attribute in local.quay_repository_attributes :
-      "${repo}-quay_repository_${attribute}" => {
-        scope     = repo
-        name      = "quay_repository_${attribute}"
-        value     = lookup(module.quay_repository[repo], attribute, null)
-        sensitive = false
-      }
-    }
-  ]...)
-
-  cloudflare_zone_variables = {
-    for repo in keys(local.repository_homepage_urls) :
-    "${repo}-cloudflare_zone_id" => {
-      scope     = repo
-      name      = "cloudflare_zone_id"
-      value     = module.cloudflare_zone[repo].id
-      sensitive = true
-    }
-  }
-
-  certificate_variables = {
-    for repo in keys(local.repository_homepage_urls) :
-    "${repo}-certificate_arn" => {
-      scope     = repo
-      name      = "certificate_arn"
-      value     = module.aws_certificate[repo].certificate_arn
-      sensitive = true
-    }
-  }
-
   all_github_variables = merge(
-    local.certificate_variables,
-    local.cloudflare_zone_variables,
     local.github_variables,
-    local.quay_variables,
-  )
-
-  repository_id_map = merge(
-    {
-      (var.repository_name) = data.github_repository.this.repo_id
-    },
-    {
-      for name, mod in module.github_repository :
-      name => mod.id
-    }
   )
 
 }
@@ -79,9 +30,6 @@ locals {
 module "github_variable" {
   source   = "github.com/evoteum/tofu-modules//github/variable"
   for_each = local.all_github_variables
-  depends_on = [
-    module.quay_repository
-  ]
 
   sensitive = each.value.sensitive
   scope     = each.value.scope
