@@ -27,7 +27,7 @@ locals {
 
   repository_id_map = merge(
     {
-      var.repository_name = data.github_repository.this.id
+      (var.repository_name) = data.github_repository.this.id
     },
     {
       for name, mod in module.github_repository :
