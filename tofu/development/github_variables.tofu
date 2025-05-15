@@ -18,7 +18,7 @@ locals {
         name      = "repository_${attribute_key}"
         value     = lookup(config, attribute_key, attribute_default)
         sensitive = false
-      } if lookup(config, attribute_key, null) != null
+      }
     }
   ]...)
 
