@@ -20,7 +20,7 @@ evoteum.github.io:
 planzoco:
   artefact_type: container
   description: Every question finds its best answer
-  homepage_url: "https://www.planzo.co"
+  homepage_url: "https://planzo.co"
   language: go
   language_version: 1.21.0
   needs_auto_docs: true
