@@ -20,7 +20,7 @@ evoteum.github.io:
 planzoco:
   artefact_type: container
   description: Every question finds its best answer
-  homepage_url: "https://planzo.co"
+  homepage_url: "https://www.planzo.co"
   language: go
   language_version: 1.21.0
   needs_auto_docs: true
@@ -56,3 +56,7 @@ platform-infrastructure:
   needs_auto_docs: true
 pre-commit-hooks:
   description: Reusable pre-commit hooks for managing code style and quality
+obsero:
+  description: Because Every Detail Counts
+grimoire:
+  description: The Opinionated Linter for GitHub Actions Workflows
