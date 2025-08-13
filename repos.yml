@@ -18,6 +18,7 @@ estate-reusable-workflows:
 evoteum.github.io:
   description: Evoteum's website
   homepage_url: "https://evoteum.com"
+  needs_tofu: true
 planzoco:
   artefact_type: container
   description: Every question finds its best answer
