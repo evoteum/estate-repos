@@ -17,6 +17,7 @@ estate-reusable-workflows:
   description: Reusable GitHub Actions workflows
 evoteum.github.io:
   description: Evoteum's website
+  has_pages: true
   homepage_url: "https://evoteum.com"
   needs_tofu: true
 planzoco:

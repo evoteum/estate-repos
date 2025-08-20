@@ -18,10 +18,10 @@ locals {
         name      = "repository_${attribute_key}"
         value     = lookup(config, attribute_key, attribute_default)
         sensitive = false
-      } if (
-      contains(keys(config), attribute_key)
-      || attribute_default != null
-    )
+        } if(
+        contains(keys(config), attribute_key)
+        || attribute_default != null
+      )
     }
   ]...)
 
@@ -39,22 +39,4 @@ locals {
     }
   )
 
-}
-
-
-module "github_variable" {
-  source   = "github.com/evoteum/tofu-modules//github/variable"
-  for_each = local.all_github_variables
-
-  sensitive = each.value.sensitive
-  scope     = each.value.scope
-  name      = each.value.name
-  value     = each.value.value
-}
-
-module "github_set_repository_id" {
-  for_each        = local.repository_id_map
-  source          = "github.com/evoteum/tofu-modules//github/set_repository_id"
-  repository_name = each.key
-  repository_id   = each.value
 }

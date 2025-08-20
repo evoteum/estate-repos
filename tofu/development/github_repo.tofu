@@ -8,6 +8,7 @@ module "github_repository" {
   archived             = lookup(each.value, "archived", null)
   has_discussions      = lookup(each.value, "has_discussions", null)
   has_issues           = lookup(each.value, "has_issues", null)
+  has_pages            = lookup(each.value, "has_pages", null)
   has_projects         = lookup(each.value, "has_projects", null)
   has_wiki             = lookup(each.value, "has_wiki", null)
   homepage_url         = lookup(each.value, "homepage_url", null)
