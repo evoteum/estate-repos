@@ -65,3 +65,5 @@ grimoire:
   description: The Opinionated Linter for GitHub Actions Workflows
 harvey:
   description: GitHub Action that generates cryptographic timestamp proofs for your files, anchoring them on public blockchains for immutable evidence of creation.
+estate-policy:
+  description: Policies for enforcing organisation-wide guardrails
