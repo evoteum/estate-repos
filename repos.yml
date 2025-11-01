@@ -71,3 +71,6 @@ ej:
   description: Simple Linux & Mac CLI tool to standardise Engineering Journal entries.
 kubernetes-lab:
   description: Our Kubernetes Lab
+ubuntu-image-builder:
+  description: Builds custom Ubuntu images with ubuntu-image and Python tooling
+  artefact_type: container
