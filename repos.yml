@@ -74,3 +74,11 @@ kubernetes-lab:
 ubuntu-image-builder:
   description: Builds custom Ubuntu images with ubuntu-image and Python tooling
   archived: true
+kubernetes-lab-bootstrap:
+  description: Our Kubernetes Lab
+kubernetes-lab-infrastructure:
+  description: Long lived infrastructure that the cluster depends on.
+kubernetes-lab-config:
+  description: Cluster Configuration
+kubernetes-lab-services:
+  description: Services that run in the lab
