@@ -21,7 +21,7 @@ evoteum.github.io:
   homepage_url: "https://evoteum.com"
   needs_tofu: true
 planzoco:
-  artefact_type: container
+  artifact_type: container
   description: Every question finds its best answer
   homepage_url: "https://planzo.co"
   language: go
@@ -35,7 +35,7 @@ planzococom:
   needs_tofu: true
   type: redirect
 testy-mctestface:
-  artefact_type: container
+  artifact_type: container
   description: Sandbox for testing
   language: python
   language_version: 3.13.0
@@ -50,7 +50,7 @@ terraform-provider-cron-expression-descriptor:
   needs_todo_to_issue: true
 apprunner-go-runtime-app:
   description: Testing AWS App runner - clone of abhirockzz/apprunner-go-runtime-app
-  artefact_type: source
+  artifact_type: source
 platform-infrastructure:
   description: Shared infrastructure for the Evoteum platform
   needs_tofu: true
@@ -84,4 +84,4 @@ kubernetes-lab-services:
   description: Services that run in the lab
 tocgen:
   description: Generate Table of Contents for Markdown files
-  artefact_type: container
+  artifact_type: container
