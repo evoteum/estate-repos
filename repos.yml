@@ -87,4 +87,4 @@ tocgen:
   artifact_type: container
   language: python
   language_version: 3.12
-  source_path: .
+  source_path: python
