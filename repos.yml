@@ -85,3 +85,6 @@ kubernetes-lab-services:
 tocgen:
   description: Generate Table of Contents for Markdown files
   artifact_type: container
+  language: python
+  language_version: 3.12
+  source_path: .
