@@ -76,6 +76,7 @@ ubuntu-image-builder:
   archived: true
 kubernetes-lab-bootstrap:
   description: Build the Kubernetes Lab from empty metal
+  tocgen: true
 kubernetes-lab-infrastructure:
   description: Long lived infrastructure that the cluster depends on.
 kubernetes-lab-config:
@@ -88,3 +89,4 @@ tocgen:
   language: python
   language_version: 3.12
   source_path: python
+  tocgen: true
