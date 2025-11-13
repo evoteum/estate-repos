@@ -34,9 +34,10 @@ locals {
     for repo in keys(module.quay_repository) : {
       for attribute in local.quay_repository_attributes :
       "${repo}-quay_repository_${attribute}" => {
-        scope = repo
-        name  = "quay_repository_${attribute}"
-        value = lookup(module.quay_repository[repo], attribute, null)
+        scope     = repo
+        name      = "quay_repository_${attribute}"
+        value     = lookup(module.quay_repository[repo], attribute, null)
+        sensitive = false
       }
     }
   ]...)
