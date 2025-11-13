@@ -17,5 +17,4 @@ module "github_repository" {
   organisation         = var.organisation
   topics               = lookup(each.value, "topics", null)
   visibility           = lookup(each.value, "visibility", null)
-  artifact_type        = lookup(each.value, "artifact_type", null)
 }
