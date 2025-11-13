@@ -1,92 +1,118 @@
-.github:
-  description: GitHub configuration
-containerfiles:
-  description: Reusable Containerfiles
-discussions:
-  description: Community Discussions
-  has_discussions: true
-  has_downloads: false
-  has_issues: false
-estate-config:
-  description: Configuration for the estate
-  needs_tofu: true
-  tofu_build_schedule: "0 23 * * *"
-  environments: development
-  needs_todo_to_issue: true
-estate-reusable-workflows:
-  description: Reusable GitHub Actions workflows
-evoteum.github.io:
-  description: Evoteum's website
-  has_pages: true
-  homepage_url: "https://evoteum.com"
-  needs_tofu: true
-planzoco:
-  artifact_type: container
-  description: Every question finds its best answer
-  homepage_url: "https://planzo.co"
-  language: go
-  language_version: 1.21.0
-  needs_auto_docs: true
-  needs_tofu: true
-  source_path: go/planzoco
-planzococom:
-  description: Configures the redirect from planzoco.com to planzo.co
-  homepage_url: "https://planzoco.com"
-  needs_tofu: true
-  type: redirect
-testy-mctestface:
-  artifact_type: container
-  description: Sandbox for testing
-  language: python
-  language_version: 3.13.0
-  source_path: python
-  needs_tofu: true
-  needs_auto_docs: true
-  fail_fast: false
-tofu-modules:
-  description: Modules for OpenTofu
-terraform-provider-cron-expression-descriptor:
-  description: Terraform provider that converts cron expressions into human readable descriptions.
-  needs_todo_to_issue: true
-apprunner-go-runtime-app:
-  description: Testing AWS App runner - clone of abhirockzz/apprunner-go-runtime-app
-  artifact_type: source
-platform-infrastructure:
-  description: Shared infrastructure for the Evoteum platform
-  needs_tofu: true
-  homepage_url: https://evoteum.dev
-  type: infrastructure
-  needs_auto_docs: true
-pre-commit-hooks:
-  description: Reusable pre-commit hooks for managing code style and quality
-obsero:
-  description: Because Every Detail Counts
-grimoire:
-  description: The Opinionated Linter for GitHub Actions Workflows
-harvey:
-  description: GitHub Action that generates cryptographic timestamp proofs for your files, anchoring them on public blockchains for immutable evidence of creation.
-estate-policy:
-  description: Policies for enforcing organisation-wide guardrails
-ej:
-  description: Simple Linux & Mac CLI tool to standardise Engineering Journal entries.
-kubernetes-lab:
-  description: Our Kubernetes Lab
-ubuntu-image-builder:
-  description: Builds custom Ubuntu images with ubuntu-image and Python tooling
-  archived: true
-kubernetes-lab-bootstrap:
-  description: Build the Kubernetes Lab from empty metal
-  tocgen: true
-kubernetes-lab-infrastructure:
-  description: Long lived infrastructure that the cluster depends on.
-kubernetes-lab-config:
-  description: Cluster Configuration
-kubernetes-lab-services:
-  description: Services that run in the lab
-tocgen:
-  description: Generate Table of Contents for Markdown files
-  artifact_type: container
-  language: python
-  language_version: 3.12
-  source_path: python
-  tocgen: true
+repositories:
+  - name: .github
+    description: GitHub configuration
+
+  - name: containerfiles
+    description: Reusable Containerfiles
+
+  - name: discussions
+    description: Community Discussions
+    has_discussions: true
+    has_downloads: false
+    has_issues: false
+
+  - name: estate-config
+    description: Configuration for the estate
+    needs_tofu: true
+    tofu_build_schedule: "0 23 * * *"
+    environments: development
+    needs_todo_to_issue: true
+
+  - name: estate-reusable-workflows
+    description: Reusable GitHub Actions workflows
+
+  - name: evoteum.github.io
+    description: Evoteum's website
+    has_pages: true
+    homepage_url: "https://evoteum.com"
+    needs_tofu: true
+
+  - name: planzoco
+    artifact_type: container
+    description: Every question finds its best answer
+    homepage_url: "https://planzo.co"
+    language: go
+    language_version: 1.21.0
+    needs_auto_docs: true
+    needs_tofu: true
+    source_path: go/planzoco
+
+  - name: planzococom
+    description: Configures the redirect from planzoco.com to planzo.co
+    homepage_url: "https://planzoco.com"
+    needs_tofu: true
+    type: redirect
+
+  - name: testy-mctestface
+    artifact_type: container
+    description: Sandbox for testing
+    language: python
+    language_version: 3.13.0
+    source_path: python
+    needs_tofu: true
+    needs_auto_docs: true
+    fail_fast: false
+
+  - name: tofu-modules
+    description: Modules for OpenTofu
+
+  - name: terraform-provider-cron-expression-descriptor
+    description: Terraform provider that converts cron expressions into human readable descriptions.
+    needs_todo_to_issue: true
+
+  - name: apprunner-go-runtime-app
+    description: Testing AWS App runner - clone of abhirockzz/apprunner-go-runtime-app
+    artifact_type: source
+
+  - name: platform-infrastructure
+    description: Shared infrastructure for the Evoteum platform
+    needs_tofu: true
+    homepage_url: https://evoteum.dev
+    type: infrastructure
+    needs_auto_docs: true
+
+  - name: pre-commit-hooks
+    description: Reusable pre-commit hooks for managing code style and quality
+
+  - name: obsero
+    description: Because Every Detail Counts
+
+  - name: grimoire
+    description: The Opinionated Linter for GitHub Actions Workflows
+
+  - name: harvey
+    description: GitHub Action that generates cryptographic timestamp proofs for your files, anchoring them on public blockchains for immutable evidence of creation.
+
+  - name: estate-policy
+    description: Policies for enforcing organisation-wide guardrails
+
+  - name: ej
+    description: Simple Linux & Mac CLI tool to standardise Engineering Journal entries.
+
+  - name: kubernetes-lab
+    description: Our Kubernetes Lab
+
+  - name: ubuntu-image-builder
+    description: Builds custom Ubuntu images with ubuntu-image and Python tooling
+    archived: true
+
+  - name: kubernetes-lab-bootstrap
+    description: Build the Kubernetes Lab from empty metal
+    tocgen: true
+
+  - name: kubernetes-lab-infrastructure
+    description: Long lived infrastructure that the cluster depends on.
+
+  - name: kubernetes-lab-config
+    description: Cluster Configuration
+
+  - name: kubernetes-lab-services
+    description: Services that run in the lab
+
+  - name: tocgen
+    description: Generate Table of Contents for Markdown files
+    artifact_type: container
+    language: python
+    language_version: 3.12
+    source_path: python
+    tocgen: true
