@@ -4,6 +4,7 @@ repositories:
 
   - name: containerfiles
     description: Reusable Containerfiles
+    featured: true
 
   - name: discussions
     description: Community Discussions
@@ -36,6 +37,7 @@ repositories:
     needs_auto_docs: true
     needs_tofu: true
     source_path: go/planzoco
+    featured: true
 
   - name: planzococom
     description: Configures the redirect from planzoco.com to planzo.co
@@ -55,6 +57,7 @@ repositories:
 
   - name: tofu-modules
     description: Modules for OpenTofu
+    featured: true
 
   - name: terraform-provider-cron-expression-descriptor
     description: Terraform provider that converts cron expressions into human readable descriptions.
@@ -63,6 +66,7 @@ repositories:
   - name: apprunner-go-runtime-app
     description: Testing AWS App runner - clone of abhirockzz/apprunner-go-runtime-app
     artifact_type: source
+    archived: true
 
   - name: platform-infrastructure
     description: Shared infrastructure for the Evoteum platform
@@ -99,15 +103,19 @@ repositories:
   - name: kubernetes-lab-bootstrap
     description: Build the Kubernetes Lab from empty metal
     tocgen: true
+    featured: true
 
   - name: kubernetes-lab-infrastructure
     description: Long lived infrastructure that the cluster depends on.
+    featured: true
 
   - name: kubernetes-lab-config
     description: Cluster Configuration
+    featured: true
 
   - name: kubernetes-lab-services
     description: Services that run in the lab
+    featured: true
 
   - name: tocgen
     description: Generate Table of Contents for Markdown files
@@ -116,3 +124,14 @@ repositories:
     language_version: 3.12
     source_path: python
     tocgen: true
+    featured: true
+
+  - name: drydock
+    description: A harbour workshop where bare metal becomes a ready Kubernetes vessel
+    featured: true
+    tocgen: true
+
+  - name: sunshineos
+    description: The little discovery OS that guides your servers safely into Drydock
+    tocgen: true
+    featured: true
