@@ -95,13 +95,14 @@ repositories:
 
   - name: kubernetes-lab
     description: Our Kubernetes Lab
+    tocgen: true
 
   - name: ubuntu-image-builder
     description: Builds custom Ubuntu images with ubuntu-image and Python tooling
     archived: true
 
   - name: kubernetes-lab-bootstrap
-    description: Build the Kubernetes Lab from empty metal
+    description: Automated Kubernetes cluster deployment on metal using Ansible
     tocgen: true
     featured: true
 
@@ -132,6 +133,11 @@ repositories:
     tocgen: true
 
   - name: sunshineos
-    description: The little discovery OS that guides your servers safely into Drydock
+    description: The little tug that guides your servers safely into Drydock
+    tocgen: true
+    featured: true
+
+  - name: herculesos
+    description: The tug that brings your Kubernetes ships home for decommissioning
     tocgen: true
     featured: true
