@@ -5,6 +5,7 @@ repositories:
   - name: containerfiles
     description: Reusable Containerfiles
     featured: true
+    tocgen: true
 
   - name: discussions
     description: Community Discussions
@@ -38,6 +39,7 @@ repositories:
     needs_tofu: true
     source_path: go/planzoco
     featured: true
+    tocgen: true
 
   - name: planzococom
     description: Configures the redirect from planzoco.com to planzo.co
@@ -58,6 +60,7 @@ repositories:
   - name: tofu-modules
     description: Modules for OpenTofu
     featured: true
+    tocgen: true
 
   - name: terraform-provider-cron-expression-descriptor
     description: Terraform provider that converts cron expressions into human readable descriptions.
@@ -92,6 +95,7 @@ repositories:
 
   - name: ej
     description: Simple Linux & Mac CLI tool to standardise Engineering Journal entries.
+    tocgen: true
 
   - name: kubernetes-lab
     description: Our Kubernetes Lab
@@ -109,14 +113,17 @@ repositories:
   - name: kubernetes-lab-infrastructure
     description: Long lived infrastructure that the cluster depends on.
     featured: true
+    tocgen: true
 
   - name: kubernetes-lab-config
     description: Cluster Configuration
     featured: true
+    tocgen: true
 
   - name: kubernetes-lab-services
     description: Services that run in the lab
     featured: true
+    tocgen: true
 
   - name: tocgen
     description: Generate Table of Contents for Markdown files
