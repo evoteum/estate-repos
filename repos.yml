@@ -148,3 +148,7 @@ repositories:
     description: The tug that brings your Kubernetes ships home for decommissioning
     tocgen: true
     featured: true
+
+  - name: slurm-ansible
+    description: Ansible roles and playbooks for provisioning and operating a Slurm HPC cluster on Linux
+    tocgen: true
