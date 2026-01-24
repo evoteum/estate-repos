@@ -92,6 +92,7 @@ repositories:
 
   - name: estate-policy
     description: Policies for enforcing organisation-wide guardrails
+    tocgen: true
 
   - name: ej
     description: Simple Linux & Mac CLI tool to standardise Engineering Journal entries.
