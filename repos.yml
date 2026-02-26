@@ -153,3 +153,7 @@ repositories:
   - name: slurm-ansible
     description: Ansible roles and playbooks for provisioning and operating a Slurm HPC cluster on Linux
     tocgen: true
+
+  - name: terraform-provider-thingiverse
+    description: Unofficial OpenTofu & Terraform provider for Thingiverse
+    tocgen: true
