@@ -157,3 +157,7 @@ repositories:
   - name: terraform-provider-thingiverse
     description: Unofficial OpenTofu & Terraform provider for Thingiverse
     tocgen: true
+
+  - name: almanac
+    description: Kubernetes operator that generates KEDA ScaledObjects from business calendar events
+    tocgen: true
