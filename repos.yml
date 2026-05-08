@@ -161,3 +161,7 @@ repositories:
   - name: almanac
     description: Kubernetes operator that generates KEDA ScaledObjects from business calendar events
     tocgen: true
+
+  - name: adr
+    description: CLI to manage Architecture Decision Records
+    tocgen: true
