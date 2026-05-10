@@ -165,3 +165,11 @@ repositories:
   - name: adr
     description: CLI to manage Architecture Decision Records
     tocgen: true
+
+  - name: forge-archive
+    description: Back up repo issues and discussions into normal files you actually own
+    tocgen: true
+
+  - name: presentations
+    description: Interesting Presentations
+    tocgen: true
