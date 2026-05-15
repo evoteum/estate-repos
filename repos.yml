@@ -173,3 +173,5 @@ repositories:
   - name: presentations
     description: Interesting Presentations
     tocgen: true
+    has_pages: true
+    pages_build_type: workflow
