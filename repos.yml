@@ -175,4 +175,3 @@ repositories:
     tocgen: true
     has_pages: true
     pages_build_type: workflow
-    pages_cname: evoteum.github.io
