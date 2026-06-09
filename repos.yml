@@ -179,3 +179,4 @@ repositories:
   - name: karp
     description: Kubernetes-native presentation reconciliation, because apparently everything is Kubernetes now
     tocgen: true
+    homepage_url: "https://karp.sh"
