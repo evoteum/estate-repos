@@ -175,3 +175,7 @@ repositories:
     tocgen: true
     has_pages: true
     pages_build_type: workflow
+
+  - name: karp
+    description: Kubernetes-native presentation reconciliation, because apparently everything is Kubernetes now
+    tocgen: true
