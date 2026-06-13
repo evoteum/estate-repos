@@ -180,3 +180,10 @@ repositories:
     description: Kubernetes-native presentation reconciliation, because apparently everything is Kubernetes now
     tocgen: true
     homepage_url: "https://karp.sh"
+
+  - name: itsbeginningtolookalotlikechristmas
+    description:  Graphing Christmasyness over time
+    tocgen: true
+    homepage_url: http://ItsBeginningToLookALotLike.Christmas
+    has_pages: true
+    pages_build_type: legacy
