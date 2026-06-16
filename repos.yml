@@ -190,9 +190,6 @@ repositories:
     description:  Graphing Christmasyness over time
     tocgen: true
     homepage_url: https://ItsBeginningToLookALotLike.Christmas
-    has_pages: true
-    pages_build_type: legacy
-    pages_cname: itsbeginningtolookalotlike.christmas
     artifact_type: container
     language: python
     language_version: "3.13.0"
