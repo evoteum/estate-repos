@@ -181,6 +181,11 @@ repositories:
     tocgen: true
     homepage_url: "https://karp.sh"
 
+  - name: karp-website
+    description: Website for the Karp project
+    tocgen: true
+    homepage_url: "https://karp.sh"
+
   - name: itsbeginningtolookalotlikechristmas
     description:  Graphing Christmasyness over time
     tocgen: true
@@ -188,3 +193,7 @@ repositories:
     has_pages: true
     pages_build_type: legacy
     pages_cname: itsbeginningtolookalotlike.christmas
+    artifact_type: container
+    language: python
+    language_version: "3.13.0"
+    source_path: python
