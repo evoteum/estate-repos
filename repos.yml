@@ -87,8 +87,8 @@ repositories:
   - name: grimoire
     description: The Opinionated Linter for GitHub Actions Workflows
 
-  - name: harvey
-    description: GitHub Action that generates cryptographic timestamp proofs for your files, anchoring them on public blockchains for immutable evidence of creation.
+  - name: repo-timestamps
+    description: Cryptographic timestamp proofs for repository file changes, anchored to public blockchains for independently verifiable audit evidence
 
   - name: estate-policy
     description: Policies for enforcing organisation-wide guardrails
