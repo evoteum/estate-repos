@@ -89,6 +89,7 @@ repositories:
 
   - name: repo-timestamps
     description: Cryptographic timestamp proofs for repository file changes, anchored to public blockchains for independently verifiable audit evidence
+    tocgen: true
 
   - name: estate-policy
     description: Policies for enforcing organisation-wide guardrails
@@ -194,3 +195,4 @@ repositories:
     language: python
     language_version: "3.13.0"
     source_path: python
+    needs_tofu: true
