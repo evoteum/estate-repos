@@ -196,3 +196,12 @@ repositories:
     language_version: "3.13.0"
     source_path: python
     needs_tofu: true
+
+  - name: itsbeginningtolookalotlikechristmas-datagather
+    description:  Gathers the data for ItsBeginningToLookALotLike.Christmas
+    tocgen: true
+    homepage_url: https://ItsBeginningToLookALotLike.Christmas
+    artifact_type: container
+    language: python
+    language_version: "3.13.0"
+    source_path: python
