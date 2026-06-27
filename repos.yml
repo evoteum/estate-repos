@@ -192,10 +192,16 @@ repositories:
     tocgen: true
     homepage_url: https://ItsBeginningToLookALotLike.Christmas
     artifact_type: container
-    language: python
-    language_version: "3.13.0"
-    source_path: python
+    language: html
+    language_version: "5"
+    source_path: site
     needs_tofu: true
+    trigger_files:
+      - site/data.csv
+      - site/index.html
+      - site/script.js
+      - site/styles.css
+      - site/nginx.conf
 
   - name: itsbeginningtolookalotlikechristmas-datagather
     description:  Gathers the data for ItsBeginningToLookALotLike.Christmas
