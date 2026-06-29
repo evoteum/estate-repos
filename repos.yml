@@ -205,3 +205,7 @@ repositories:
     language: python
     language_version: "3.13.0"
     source_path: python
+
+  - name: mavis
+    description: Child-safe, kiosk-style desktop learning platform for young children
+    tocgen: true
