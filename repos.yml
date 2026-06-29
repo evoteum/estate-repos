@@ -196,12 +196,6 @@ repositories:
     language_version: "5"
     source_path: site
     needs_tofu: true
-    trigger_files:
-      - site/data.csv
-      - site/index.html
-      - site/script.js
-      - site/styles.css
-      - site/nginx.conf
 
   - name: itsbeginningtolookalotlikechristmas-datagather
     description:  Gathers the data for ItsBeginningToLookALotLike.Christmas
