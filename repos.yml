@@ -209,3 +209,11 @@ repositories:
   - name: mavis
     description: Child-safe, kiosk-style desktop learning platform for young children
     tocgen: true
+
+  - name: ansible-collection-workstation
+    description: Ansible collection for configuring your workstation
+    tocgen: true
+
+  - name: ansible-collection-kubernetes
+    description: Ansible collection for building a highly available Kubernetes cluster
+    tocgen: true
