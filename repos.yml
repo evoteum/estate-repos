@@ -217,3 +217,11 @@ repositories:
   - name: ansible-collection-kubernetes
     description: Ansible collection for building a highly available Kubernetes cluster
     tocgen: true
+
+  - name: homebrew-tap
+    description: Install and update our really useful tools with Homebrew
+    tocgen: true
+
+  - name: forge-harvest
+    description: Pull all of the repos across all of your forges
+    tocgen: true
