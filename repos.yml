@@ -225,3 +225,7 @@ repositories:
   - name: forge-harvest
     description: Pull all of the repos across all of your forges
     tocgen: true
+
+  - name: tinit
+    description: Task initialiser
+    tocgen: true
