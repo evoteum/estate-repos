@@ -229,3 +229,7 @@ repositories:
   - name: tinit
     description: Task initialiser
     tocgen: true
+
+  - name: reviewreminder
+    description: Remind colleagues to review your code
+    tocgen: true
